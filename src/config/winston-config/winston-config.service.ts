@@ -7,6 +7,8 @@ import {
 } from 'nest-winston';
 import * as pkg from '../../../package.json';
 
+const { json, timestamp, combine } = winston.format;
+
 @Injectable()
 export class WinstonConfigService implements WinstonModuleOptionsFactory {
   createWinstonModuleOptions(): WinstonModuleOptions {
@@ -37,7 +39,7 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
     }
     return {
       transports: transports,
-      format: winston.format.json(),
+      format: combine(timestamp(), json()),
       defaultMeta: {
         appName: pkg.name,
       },

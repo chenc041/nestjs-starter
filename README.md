@@ -5,6 +5,10 @@
 A template to get a nestjs server up and running
 
 
+## Feature
+- winston
+- jwt
+
 ## Installation
 
 ```bash
