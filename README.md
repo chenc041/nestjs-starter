@@ -2,6 +2,8 @@
 
 ## Description
 
+A template to get a nestjs server up and running
+
 
 ## Installation
 
