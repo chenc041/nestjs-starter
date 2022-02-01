@@ -1,8 +1,11 @@
 {
   "name": "nestjs-starter",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A template to get a nestjs server up and running",
+  "author": {
+    "name": "chenc",
+    "email": "double_cl@163.com"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
