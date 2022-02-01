@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@nestjs/cli': ^8.0.0
   '@nestjs/common': ^8.0.0
+  '@nestjs/config': ^1.1.6
   '@nestjs/core': ^8.0.0
   '@nestjs/jwt': ^8.0.0
   '@nestjs/passport': ^8.1.0
@@ -41,6 +42,7 @@ specifiers:
 
 dependencies:
   '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+  '@nestjs/config': 1.1.6_0f75cad7c3bc55c714d492fe95499bdf
   '@nestjs/core': 8.2.6_2d4ee36c4446df4873bb38fb1c4583da
   '@nestjs/jwt': 8.0.0_@nestjs+common@8.2.6
   '@nestjs/passport': 8.1.0_469354efd308cbdee43194b5fd6a2c15
@@ -831,6 +833,22 @@ packages:
       uuid: mirrors.tencent.com/uuid/8.3.2
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  /@nestjs/config/1.1.6_0f75cad7c3bc55c714d492fe95499bdf:
+    resolution: {integrity: sha512-HYizKt6Dr6gcZl8FmZbTfQxP0MG8oXMh+gVFT0XCwYDAq26BOKyhPsIxrKsryicVeKViRgetCUhlJY9EqaekZA==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0
+      reflect-metadata: ^0.1.13
+      rxjs: ^6.0.0 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      dotenv: 10.0.0
+      dotenv-expand: 5.1.0
+      lodash: mirrors.tencent.com/lodash/4.17.21
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.2
+      uuid: mirrors.tencent.com/uuid/8.3.2
     dev: false
 
   /@nestjs/core/8.2.6_2d4ee36c4446df4873bb38fb1c4583da:
@@ -1978,6 +1996,15 @@ packages:
       webidl-conversions: mirrors.tencent.com/webidl-conversions/5.0.0
     dev: true
 
+  /dotenv-expand/5.1.0:
+    resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: false
+
+  /dotenv/10.0.0:
+    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
+    engines: {node: '>=10'}
+    dev: false
+
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: false
@@ -2459,6 +2486,11 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
+
+  /graceful-fs/4.2.9:
+    resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
+    dev: true
+    optional: true
 
   /hexoid/1.0.0:
     resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
@@ -5284,7 +5316,7 @@ packages:
     dependencies:
       universalify: mirrors.tencent.com/universalify/2.0.0
     optionalDependencies:
-      graceful-fs: mirrors.tencent.com/graceful-fs/4.2.9
+      graceful-fs: 4.2.9
     dev: true
 
   mirrors.tencent.com/jsonwebtoken/8.5.1:
@@ -5379,7 +5411,6 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
-    dev: true
 
   mirrors.tencent.com/log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/log-symbols/-/log-symbols-4.1.0.tgz}

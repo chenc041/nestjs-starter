@@ -6,6 +6,8 @@ export class JwtConfigService {
   constructor(private readonly jwtService: JwtService) {}
 
   async login(user: { username: string; userId: string }) {
+    // TODO
+    // here to check the user is exist
     const payload = { username: user.username, sub: user.userId };
     return {
       access_token: this.jwtService.sign(payload),

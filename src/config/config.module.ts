@@ -6,17 +6,29 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from 'src/constants';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from 'src/config/jwt-config/jwt.strategy';
+import { ConfigModule as LoadEnvModule } from '@nestjs/config';
+import { join } from 'path';
 
 @Global()
 @Module({
   imports: [
+    LoadEnvModule.forRoot({
+      isGlobal: true,
+      envFilePath: [
+        join(
+          __dirname,
+          '..',
+          `../../env/.${process.env.NODE_ENV || 'development'}.env`,
+        ),
+      ],
+    }),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     WinstonModule.forRootAsync({
       useClass: WinstonConfigService,
     }),
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '1h' },
+      signOptions: { expiresIn: '10h' },
     }),
   ],
   providers: [JwtStrategy, JwtConfigService, WinstonConfigService],

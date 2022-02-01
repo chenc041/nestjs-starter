@@ -9,6 +9,11 @@
             "date": 1643609008426,
             "name": "log/nestjs-starter-error-2022-01-31.log",
             "hash": "7fe0105e00f3f6d1d538415969957e94"
+        },
+        {
+            "date": 1643677540659,
+            "name": "log/nestjs-starter-error-2022-02-01.log",
+            "hash": "c83e9b1acc1bfaeb0ddd34cdcc623ecf"
         }
     ],
     "hashType": "md5"
