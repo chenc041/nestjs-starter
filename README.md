@@ -5,9 +5,11 @@
 A template to get a nestjs server up and running
 
 
-## Feature
-- winston - log
-- jwt - auth
+## Preset
+- winston log
+- jwt auth
+- env or dotEnv file
+- typeorm (mysql)
 
 ## Installation
 

@@ -1,15 +1,17 @@
-import { Controller, Get, Inject, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
 import { JwtConfigService } from 'src/config/jwt-config/jwt-config.service';
 import { User } from 'src/decorators/user.decorator';
 import { JwtAuthGuard } from 'src/config/jwt-config/jwtAuth.guard';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 import { ConfigService } from '@nestjs/config';
+import { ExampleService } from 'src/example/example.service';
 
 @Controller('example')
 export class ExampleController {
   constructor(
     private readonly jwt: JwtConfigService,
+    private readonly exampleService: ExampleService,
     private readonly configService: ConfigService,
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
   ) {}
@@ -55,5 +57,11 @@ export class ExampleController {
     return {
       log: 'error',
     };
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('create/user')
+  async createUser(@Body() user: { name: string; id?: number }) {
+    return await this.exampleService.createOrUpdateUser(user);
   }
 }

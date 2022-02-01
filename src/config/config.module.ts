@@ -8,10 +8,15 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from 'src/config/jwt-config/jwt.strategy';
 import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { join } from 'path';
+import { TypeOrmConfigService } from 'src/config/typeorm-config/typeorm-config.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Global()
 @Module({
   imports: [
+    TypeOrmModule.forRootAsync({
+      useClass: TypeOrmConfigService,
+    }),
     LoadEnvModule.forRoot({
       isGlobal: true,
       envFilePath: [

@@ -14,7 +14,7 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
   createWinstonModuleOptions(): WinstonModuleOptions {
     const { NODE_ENV } = process.env;
     const transports: any[] = [];
-    if (NODE_ENV !== 'development') {
+    if (NODE_ENV === 'development') {
       transports.push(new winston.transports.Console());
     } else {
       const fileInfoTransport = new winston.transports.DailyRotateFile({
