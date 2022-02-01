@@ -1,9 +1,13 @@
 ## nestjs starter
 
+
 ## Description
 
 A template to get a nestjs server up and running
 
+### Author
+- chenc
+- double_cl@163.com
 
 ## Preset
 - winston log
@@ -43,15 +47,9 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-## Support
+## Base
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+[nestjs](https://github.com/nestjs)
 
 ## License
 
