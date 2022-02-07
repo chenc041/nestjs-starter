@@ -31,6 +31,8 @@
     "@nestjs/passport": "^8.1.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
     "mysql2": "^2.3.3",
     "nest-winston": "^1.6.2",
     "passport": "^0.5.2",

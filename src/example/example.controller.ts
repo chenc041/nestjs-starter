@@ -6,6 +6,7 @@ import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 import { ConfigService } from '@nestjs/config';
 import { ExampleService } from 'src/example/example.service';
+import { LoginDto } from 'src/dtos/login.dto';
 
 @Controller('example')
 export class ExampleController {
@@ -16,9 +17,10 @@ export class ExampleController {
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
   ) {}
 
-  @Get('login')
-  login() {
-    return this.jwt.login({ username: '1', userId: '2' });
+  @Post('login')
+  login(@Body() login: LoginDto) {
+    console.log(login, 'login');
+    return this.jwt.login(login);
   }
 
   @UseGuards(JwtAuthGuard)

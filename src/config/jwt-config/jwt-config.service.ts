@@ -5,7 +5,7 @@ import { JwtService } from '@nestjs/jwt';
 export class JwtConfigService {
   constructor(private readonly jwtService: JwtService) {}
 
-  async login(user: { username: string; userId: string }) {
+  async login(user: { username: string; userId: number }) {
     // TODO
     // here to check the user is exist
     const payload = { username: user.username, sub: user.userId };

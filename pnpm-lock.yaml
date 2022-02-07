@@ -18,6 +18,8 @@ specifiers:
   '@types/supertest': ^2.0.11
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@typescript-eslint/parser': ^5.0.0
+  class-transformer: ^0.5.1
+  class-validator: ^0.13.2
   cross-env: ^7.0.3
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
@@ -44,13 +46,15 @@ specifiers:
   winston-daily-rotate-file: ^4.6.0
 
 dependencies:
-  '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+  '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
   '@nestjs/config': 1.1.6_0f75cad7c3bc55c714d492fe95499bdf
   '@nestjs/core': 8.2.6_2d4ee36c4446df4873bb38fb1c4583da
   '@nestjs/jwt': 8.0.0_@nestjs+common@8.2.6
   '@nestjs/passport': 8.1.0_469354efd308cbdee43194b5fd6a2c15
   '@nestjs/platform-express': 8.2.6_732a54a2558f64827b8cc4f9baac4f1f
   '@nestjs/typeorm': 8.0.3_7d295ee70f5e60cc7bb984ed65836a4c
+  class-transformer: 0.5.1
+  class-validator: 0.13.2
   mysql2: 2.3.3
   nest-winston: 1.6.2_132e4f377689ec3f0df4b66a2a301686
   passport: 0.5.2
@@ -815,7 +819,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nestjs/common/8.2.6_88a789cb3f20cca25c3f70fe96f41643:
+  /@nestjs/common/8.2.6_e2dd7264172553abc41c1a07952dd8ca:
     resolution: {integrity: sha512-flLYSXunxcKyjbYddrhwbc49uE705MxBt85rS3mHyhDbAIPSGGeZEqME44YyAzCg1NTfJSNe7ztmOce5kNkb9A==}
     peerDependencies:
       cache-manager: '*'
@@ -832,6 +836,8 @@ packages:
         optional: true
     dependencies:
       axios: mirrors.tencent.com/axios/0.24.0
+      class-transformer: 0.5.1
+      class-validator: 0.13.2
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.5.2
@@ -848,7 +854,7 @@ packages:
       reflect-metadata: ^0.1.13
       rxjs: ^6.0.0 || ^7.2.0
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       dotenv: 10.0.0
       dotenv-expand: 5.1.0
       lodash: mirrors.tencent.com/lodash/4.17.21
@@ -875,7 +881,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       '@nestjs/platform-express': 8.2.6_732a54a2558f64827b8cc4f9baac4f1f
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: mirrors.tencent.com/fast-safe-stringify/2.1.1
@@ -895,7 +901,7 @@ packages:
     peerDependencies:
       '@nestjs/common': ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       '@types/jsonwebtoken': 8.5.4
       jsonwebtoken: mirrors.tencent.com/jsonwebtoken/8.5.1
     dev: false
@@ -906,7 +912,7 @@ packages:
       '@nestjs/common': ^6.0.0 || ^7.0.0 || ^8.0.0
       passport: ^0.4.0 || ^0.5.0
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       passport: 0.5.2
     dev: false
 
@@ -916,7 +922,7 @@ packages:
       '@nestjs/common': ^8.0.0
       '@nestjs/core': ^8.0.0
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       '@nestjs/core': 8.2.6_2d4ee36c4446df4873bb38fb1c4583da
       body-parser: mirrors.tencent.com/body-parser/1.19.1
       cors: mirrors.tencent.com/cors/2.8.5
@@ -969,7 +975,7 @@ packages:
         optional: true
     dependencies:
       optional: 0.1.4
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       '@nestjs/core': 8.2.6_2d4ee36c4446df4873bb38fb1c4583da
       '@nestjs/platform-express': 8.2.6_732a54a2558f64827b8cc4f9baac4f1f
       tslib: mirrors.tencent.com/tslib/2.3.1
@@ -984,7 +990,7 @@ packages:
       rxjs: ^7.2.0
       typeorm: ^0.2.34
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       '@nestjs/core': 8.2.6_2d4ee36c4446df4873bb38fb1c4583da
       reflect-metadata: 0.1.13
       rxjs: 7.5.2
@@ -1791,7 +1797,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /chrome-trace-event/1.0.3:
@@ -1805,6 +1811,17 @@ packages:
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
+
+  /class-transformer/0.5.1:
+    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+    dev: false
+
+  /class-validator/0.13.2:
+    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==}
+    dependencies:
+      libphonenumber-js: 1.9.48
+      validator: 13.7.0
+    dev: false
 
   /cli-color/2.0.1:
     resolution: {integrity: sha512-eBbxZF6fqPUNnf7CLAFOersUnyYzv83tHFLSlts+OAHsNendaqv2tHCq+/MO+b3Y+9JeoUlIvobyxG/Z8GNeOg==}
@@ -1851,6 +1868,13 @@ packages:
       color-convert: mirrors.tencent.com/color-convert/1.9.3
       color-string: 1.9.0
     dev: false
+
+  /colors/1.4.0:
+    resolution: {integrity: sha1-xQSRR51MG9rtLJztMs98fcI2D3g=, tarball: colors/download/colors-1.4.0.tgz}
+    engines: {node: '>=0.1.90'}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /colorspace/1.1.4:
     resolution: {integrity: sha512-BgvKJiuVu1igBUF2kEjRCZXol6wiiGbY5ipL/oVPwm0BL9sIpMIzM8IK7vwuxIIzOXMV3Ey5w+vxhm0rR/TN8w==}
@@ -2458,6 +2482,14 @@ packages:
     resolution: {integrity: sha512-cybjIfiiE+pTWicSCLFHSrXZ6EilF30oh91FDP9S2B051prEa7QWfrVTQm10/dDpswBDXZugPa1Ogu8Yh+HV0Q==}
     dev: true
 
+  /fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
   /functional-red-black-tree/1.0.1:
     resolution: {integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=}
     dev: true
@@ -2984,7 +3016,7 @@ packages:
       micromatch: 4.0.4
       walker: 1.0.8
     optionalDependencies:
-      fsevents: mirrors.tencent.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /jest-jasmine2/27.4.6:
@@ -3368,6 +3400,10 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /libphonenumber-js/1.9.48:
+    resolution: {integrity: sha512-2aiDGkr5Ty7LZRhKhnMeV9tfRbzd2zahgF12I0v11AFwEelSdiu5t8/Npf3UejKcuoO4anqTdjnIW3dEtj1xYQ==}
+    dev: false
+
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
@@ -3545,7 +3581,7 @@ packages:
       '@nestjs/common': ^5.0.0 || ^6.6.0 || ^7.0.0 || ^8.0.0
       winston: ^3.0.0
     dependencies:
-      '@nestjs/common': 8.2.6_88a789cb3f20cca25c3f70fe96f41643
+      '@nestjs/common': 8.2.6_e2dd7264172553abc41c1a07952dd8ca
       cli-color: 2.0.1
       fast-safe-stringify: mirrors.tencent.com/fast-safe-stringify/2.1.1
       winston: mirrors.tencent.com/winston/3.5.0
@@ -4502,6 +4538,11 @@ packages:
       source-map: mirrors.tencent.com/source-map/0.7.3
     dev: true
 
+  /validator/13.7.0:
+    resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /vary/1.1.2:
     resolution: {integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=}
     engines: {node: '>= 0.8'}
@@ -4967,7 +5008,7 @@ packages:
     dependencies:
       string-width: mirrors.tencent.com/string-width/4.2.3
     optionalDependencies:
-      colors: mirrors.tencent.com/colors/1.4.0
+      colors: 1.4.0
     dev: true
 
   mirrors.tencent.com/cliui/7.0.4:
@@ -5018,6 +5059,7 @@ packages:
     version: 1.4.0
     engines: {node: '>=0.1.90'}
     requiresBuild: true
+    dev: false
 
   mirrors.tencent.com/combined-stream/1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/combined-stream/-/combined-stream-1.0.8.tgz}
@@ -5366,16 +5408,6 @@ packages:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/fs.realpath/-/fs.realpath-1.0.0.tgz}
     name: fs.realpath
     version: 1.0.0
-
-  mirrors.tencent.com/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   mirrors.tencent.com/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/function-bind/-/function-bind-1.1.1.tgz}
