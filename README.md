@@ -14,6 +14,7 @@ A template to get a nestjs server up and running
 - jwt auth
 - env or dotEnv file
 - typeorm (mysql)
+- validate (class-validator & class-transformer)
 
 ## Installation
 
