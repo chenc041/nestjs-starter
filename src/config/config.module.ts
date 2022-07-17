@@ -1,14 +1,14 @@
 import { Global, Module } from '@nestjs/common';
 import { WinstonModule } from 'nest-winston';
-import { WinstonConfigService } from './winston-config/winston-config.service';
+import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from './jwt-config/jwt-config.service';
 import { JwtModule } from '@nestjs/jwt';
-import { jwtConstants } from 'src/constants';
+import { jwtConstants } from '~/constants';
 import { PassportModule } from '@nestjs/passport';
-import { JwtStrategy } from 'src/config/jwt-config/jwt.strategy';
+import { JwtStrategy } from '~/config/jwt-config/jwt.strategy';
 import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { join } from 'path';
-import { TypeOrmConfigService } from 'src/config/typeorm-config/typeorm-config.service';
+import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Global()
