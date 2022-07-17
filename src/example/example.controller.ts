@@ -1,12 +1,12 @@
 import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
-import { JwtConfigService } from 'src/config/jwt-config/jwt-config.service';
-import { User } from 'src/decorators/user.decorator';
-import { JwtAuthGuard } from 'src/config/jwt-config/jwtAuth.guard';
+import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { User } from '~/decorators/user.decorator';
+import { JwtAuthGuard } from '~/config/jwt-config/jwtAuth.guard';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 import { ConfigService } from '@nestjs/config';
-import { ExampleService } from 'src/example/example.service';
-import { LoginDto } from 'src/dtos/login.dto';
+import { ExampleService } from '~/example/example.service';
+import { LoginDto } from '~/dtos/login.dto';
 
 @Controller('example')
 export class ExampleController {

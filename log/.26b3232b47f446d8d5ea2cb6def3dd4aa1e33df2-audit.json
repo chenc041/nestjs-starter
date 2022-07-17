@@ -6,20 +6,10 @@
     "auditLog": "log/.26b3232b47f446d8d5ea2cb6def3dd4aa1e33df2-audit.json",
     "files": [
         {
-            "date": 1643609008424,
-            "name": "log/nestjs-starter-info-2022-01-31.log",
-            "hash": "7232a71740faa78d3e956cdbd04ecef9"
-        },
-        {
-            "date": 1643677540650,
-            "name": "log/nestjs-starter-info-2022-02-01.log",
-            "hash": "28d0e912c486c9037f154ad21547f296"
-        },
-        {
-            "date": 1643860116257,
-            "name": "log/nestjs-starter-info-2022-02-03.log",
-            "hash": "75e44083b2f2cd28ee394529ebba7f7e"
+            "date": 1658044111381,
+            "name": "log/nestjs-starter-info-2022-07-17.log",
+            "hash": "676cf7ca4bf03eeb65f1e545d16d419803cd87e2d06c862218a34ab3d1370d35"
         }
     ],
-    "hashType": "md5"
+    "hashType": "sha256"
 }
