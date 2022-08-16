@@ -5,6 +5,7 @@ import { TypeOrmTestingModule } from '~/test-utils';
 import { UserController } from '~/user/user.controller';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
+import * as cookieParser from 'cookie-parser';
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
@@ -19,6 +20,7 @@ describe('UserController (e2e)', () => {
     ).compile();
 
     app = moduleFixture.createNestApplication();
+    app.use(cookieParser());
     await app.init();
   });
 
@@ -37,5 +39,15 @@ describe('UserController (e2e)', () => {
     await register(user);
     const token = await login(user);
     expect(token).toBeDefined();
+  });
+
+  it('/api/v1/user/currentUser (GET)', async () => {
+    await register(user);
+    const token = await login(user);
+    const userInfo = await request(app.getHttpServer())
+      .get('/user/currentUser')
+      .set('Cookie', [`Authorization=${token}`])
+      .send({});
+    expect(userInfo.body.data.username).toBeDefined();
   });
 });
