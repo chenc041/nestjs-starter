@@ -1,5 +1,8 @@
 name: ci
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
@@ -48,5 +51,5 @@ jobs:
       - name: run test cov
         run: pnpm run test:cov
 
-      - name: Upload api coverage to Codecov
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
