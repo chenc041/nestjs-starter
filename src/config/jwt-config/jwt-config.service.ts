@@ -5,12 +5,12 @@ import { JwtService } from '@nestjs/jwt';
 export class JwtConfigService {
   constructor(private readonly jwtService: JwtService) {}
 
-  async login(user: { username: string; userId: number }) {
-    // TODO
-    // here to check the user is exist
-    const payload = { username: user.username, sub: user.userId };
+  async signToken(user: { username: string; userId: number }) {
+    const { username, userId } = user;
+    const payload = { username, userId };
+    const token = this.jwtService.sign(payload);
     return {
-      access_token: this.jwtService.sign(payload),
+      access_token: token,
     };
   }
 }

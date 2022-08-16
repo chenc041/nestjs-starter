@@ -6,9 +6,9 @@
     "auditLog": "log/.26b3232b47f446d8d5ea2cb6def3dd4aa1e33df2-audit.json",
     "files": [
         {
-            "date": 1658044111381,
-            "name": "log/nestjs-starter-info-2022-07-17.log",
-            "hash": "676cf7ca4bf03eeb65f1e545d16d419803cd87e2d06c862218a34ab3d1370d35"
+            "date": 1660641228788,
+            "name": "log/nestjs-starter-info-2022-08-16.log",
+            "hash": "560b3d31bb2a6534b06c79a158cfa6b23ce496ac66f4e5b302a56e84b531904e"
         }
     ],
     "hashType": "sha256"

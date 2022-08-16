@@ -4,13 +4,17 @@ import { UserEntity } from '~/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class ExampleService {
+export class UserService {
   constructor(
     @InjectRepository(UserEntity)
     private usersRepository: Repository<UserEntity>,
   ) {}
 
-  async createOrUpdateUser(user: { name: string }) {
-    return this.usersRepository.save(user);
+  async createUser(payload: { username: string; password: string }) {
+    return await this.usersRepository.save(payload);
+  }
+
+  async checkUserIsExist(payload: { username: string }) {
+    return await this.usersRepository.findOneBy(payload);
   }
 }
