@@ -1,29 +1,30 @@
-## nestjs starter
+<h1 align="center">
+nestjs starter
+</h1>
 
+<div  align='center'>
+
+[![ci workflow](https://github.com/chenc041/nestjs-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/chenc041/nestjs-starter)
+[![codecov](https://codecov.io/gh/chenc041/nestjs-starter/branch/main/graph/badge.svg?token=pYefUWcu8I)](https://codecov.io/gh/chenc041/nestjs-starter)
+
+</div>
 
 ## Description
-
 A template to get a nestjs server up and running
 
-### Author
-- chenc
-- double_cl@163.com
+## 🤡 Author
+- name: [chenc](https://github.com/chenc041)
+- email: double_cl@163.com
 
-## Preset
+## ✨ Feature
 - winston log
 - jwt auth
 - env or dotEnv file
 - typeorm (mysql)
 - validate (class-validator & class-transformer)
 
-## Installation
 
-```bash
-$ pnpm install
-```
-
-## Running the app
-
+## 🔨Development & Test
 ```bash
 # development
 $ pnpm run start
@@ -33,11 +34,7 @@ $ pnpm run start:dev
 
 # production mode
 $ pnpm run start:prod
-```
 
-## Test
-
-```bash
 # unit tests
 $ pnpm run test
 
@@ -48,10 +45,11 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
-## Base
+## ⚙ Build
+```bash
+$ pnpm run build
+```
 
-[nestjs](https://github.com/nestjs)
+## ☀️ License
+[MIT](https://github.com/chenc041/nestjs-starter/blob/main/LICENSE)
 
-## License
-
-Nest is [MIT licensed](LICENSE).
