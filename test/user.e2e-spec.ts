@@ -21,16 +21,19 @@ describe('UserController (e2e)', () => {
 
     app = moduleFixture.createNestApplication();
     app.use(cookieParser());
+    app.setGlobalPrefix('/api/v1');
     await app.init();
   });
 
   const user = { username: 'chenc', password: 'chenc' };
   const register = async (payload) => {
-    await request(app.getHttpServer()).post('/user/register').send(payload);
+    await request(app.getHttpServer())
+      .post('/api/v1/user/register')
+      .send(payload);
   };
   const login = async (payload) => {
     const userInfo = await request(app.getHttpServer())
-      .post('/user/login')
+      .post('/api/v1/user/login')
       .send(payload);
     return userInfo.body.data.access_token;
   };
@@ -45,7 +48,7 @@ describe('UserController (e2e)', () => {
     await register(user);
     const token = await login(user);
     const userInfo = await request(app.getHttpServer())
-      .get('/user/currentUser')
+      .get('/api/v1/user/currentUser')
       .set('Cookie', [`Authorization=${token}`])
       .send({});
     expect(userInfo.body.data.username).toBeDefined();
