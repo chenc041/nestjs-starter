@@ -35,15 +35,10 @@ export const TypeOrmTestingModule = ({
         secret: jwtConstants.secret,
         signOptions: { expiresIn: '10h' },
       }),
-
       LoadEnvModule.forRoot({
         isGlobal: true,
         envFilePath: [
-          join(
-            __dirname,
-            '..',
-            `../src/.${process.env.NODE_ENV || 'development'}.env`,
-          ),
+          join(__dirname, `../.${process.env.NODE_ENV || 'development'}.env`),
         ],
       }),
       PassportRegister({ defaultStrategy: 'jwt' }),

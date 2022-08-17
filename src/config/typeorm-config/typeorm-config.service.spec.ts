@@ -22,6 +22,6 @@ describe('TypeormConfig', () => {
 
   it('should be return typeorm config correct', async () => {
     const config = await service.createTypeOrmOptions('chenc');
-    expect(config.type).toBeDefined();
+    expect(config.database).toBe('test_app');
   });
 });
