@@ -4,6 +4,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from '~/constants';
 import { PassportModule } from '@nestjs/passport';
 import { WinstonModule } from 'nest-winston';
+import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { JwtStrategy } from '~/config/jwt-config/jwt.strategy';
@@ -33,6 +34,17 @@ export const TypeOrmTestingModule = ({
       jwtRegister({
         secret: jwtConstants.secret,
         signOptions: { expiresIn: '10h' },
+      }),
+
+      LoadEnvModule.forRoot({
+        isGlobal: true,
+        envFilePath: [
+          join(
+            __dirname,
+            '..',
+            `../src/.${process.env.NODE_ENV || 'development'}.env`,
+          ),
+        ],
       }),
       PassportRegister({ defaultStrategy: 'jwt' }),
       WinstonModule.forRootAsync({
