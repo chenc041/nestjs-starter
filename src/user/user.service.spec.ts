@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
-import { TypeOrmTestingModule } from '~/test-utils';
+import { TypeOrmTestingModule } from '~/test.utils';
 import { UserController } from '~/user/user.controller';
 import { UserEntity } from '~/entities/user.entity';
+import { mockUser } from '~/test.mock.data';
 
 describe('UserService', () => {
   let service: UserService;
@@ -20,7 +21,7 @@ describe('UserService', () => {
   });
 
   const create = async () => {
-    return await service.createUser({ username: 'chenc', password: 'chenc' });
+    return await service.createUser(mockUser);
   };
 
   it('should be defined', () => {

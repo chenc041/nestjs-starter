@@ -1,6 +1,6 @@
 import { TestingModule, Test } from '@nestjs/testing';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
-import { TypeOrmTestingModule } from '~/test-utils';
+import { TypeOrmTestingModule } from '~/test.utils';
 
 describe('TypeormConfig', () => {
   let service: TypeOrmConfigService;

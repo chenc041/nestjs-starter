@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
-import { TypeOrmTestingModule } from '~/test-utils';
+import { TypeOrmTestingModule } from '~/test.utils';
 
 describe('JwtConfigService', () => {
   let service: JwtConfigService;

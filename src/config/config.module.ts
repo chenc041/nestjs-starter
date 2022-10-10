@@ -1,4 +1,4 @@
-import { Global, Module } from '@nestjs/common';
+import { CacheModule, Global, Module } from '@nestjs/common';
 import { WinstonModule } from 'nest-winston';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from './jwt-config/jwt-config.service';
@@ -10,10 +10,20 @@ import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { join } from 'path';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HttpModule } from '@nestjs/axios';
 
 @Global()
 @Module({
   imports: [
+    HttpModule,
+    /**
+     * default cache store is in-memory cache
+     * if you want using other cache store, please read docs https://docs.nestjs.com/techniques/caching#different-stores
+     */
+    CacheModule.register({
+      isGlobal: true,
+      ttl: 3600 * 2,
+    }),
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,
     }),
