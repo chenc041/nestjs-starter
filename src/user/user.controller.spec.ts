@@ -3,7 +3,6 @@ import { UserController } from './user.controller';
 import { TypeOrmTestingModule } from '~/test.utils';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
-import { CookieOptions } from 'express';
 import { ApiReturnType } from '~/utils';
 import { mockUser } from '~/test.mock.data';
 
@@ -22,8 +21,8 @@ describe('UserController', () => {
     controller = module.get<UserController>(UserController);
   });
 
-  const mockSetCookie = (key: string, value: any, options: CookieOptions) => {
-    return console.log(key, value, options);
+  const mockSetCookie = () => {
+    return null;
   };
 
   const register = async (payload: {
