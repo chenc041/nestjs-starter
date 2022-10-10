@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcryptjs';
-import { bizCode } from '~/biz-code';
+import { bizCode } from '~/biz.code';
 
 export interface ApiReturnType<T = any> {
   data?: T;
