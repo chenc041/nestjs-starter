@@ -13,15 +13,15 @@ import { UserService } from '~/user/user.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { LoginDto } from '~/dtos/login.dto';
 import {
-  apiReturn,
-  ApiReturnType,
+  HttpReturn,
+  HttpReturnType,
   comparePassword,
   generatePassword,
 } from '~/utils';
 import { omit } from 'lodash';
 import { User } from '~/decorators/user.decorator';
 import { JwtAuthGuard } from '~/config/jwt-config/jwtAuth.guard';
-import { SetCookies } from '~/decorators/cookies.decorator';
+import { Cookies } from '~/decorators/cookies.decorator';
 import { Response } from 'express';
 import { AUTH_COOKIES_KEY } from '~/constants';
 import { HttpService } from '@nestjs/axios';
@@ -43,8 +43,8 @@ export class UserController {
   @Post('login')
   async login(
     @Body() user: LoginDto,
-    @SetCookies() setCookie: Response,
-  ): Promise<ApiReturnType<{ access_token: string }>> {
+    @Cookies() cookies: Response,
+  ): Promise<HttpReturnType<{ access_token: string }>> {
     const userInfo = await this.userService.checkUserIsExist({
       username: user.username,
     });
@@ -53,18 +53,18 @@ export class UserController {
       if (isMatch) {
         const { username, id } = userInfo;
         const token = await this.jwt.signToken({ username, userId: id });
-        setCookie.cookie(AUTH_COOKIES_KEY, token.access_token, {
+        cookies.cookie(AUTH_COOKIES_KEY, token.access_token, {
           httpOnly: true,
         });
-        return apiReturn({
+        return HttpReturn({
           data: token,
         });
       }
-      return apiReturn({
+      return HttpReturn({
         statusCode: 10002,
       });
     } else {
-      return apiReturn({
+      return HttpReturn({
         statusCode: 10001,
       });
     }
@@ -76,13 +76,13 @@ export class UserController {
       username: user.username,
     });
     if (isExist) {
-      return apiReturn({
+      return HttpReturn({
         statusCode: 10003,
       });
     }
     const password = await generatePassword(user.password);
     const result = await this.userService.createUser({ ...user, password });
-    return apiReturn({
+    return HttpReturn({
       data: result,
     });
   }
@@ -90,17 +90,17 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   @Get('currentUser')
   async currentUser(@User() user: any) {
-    return apiReturn({
+    return HttpReturn({
       data: omit(user, 'password'),
     });
   }
 
   @Get('logout')
-  async logout(@SetCookies() setCookie: Response) {
-    setCookie.cookie(AUTH_COOKIES_KEY, '', {
+  async logout(@Cookies() cookies: Response) {
+    cookies.cookie(AUTH_COOKIES_KEY, '', {
       expires: new Date(0),
     });
-    return apiReturn({
+    return HttpReturn({
       statusCode: 10000,
     });
   }

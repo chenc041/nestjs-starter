@@ -1,12 +1,12 @@
 import * as bcrypt from 'bcryptjs';
 import { bizCode } from '~/biz.code';
 
-export interface ApiReturnType<T = any> {
+export interface HttpReturnType<T = any> {
   data?: T;
   statusCode?: keyof typeof bizCode;
 }
 
-export const apiReturn = <T>(payload: ApiReturnType<T>) => {
+export const HttpReturn = <T>(payload: HttpReturnType<T>) => {
   const { statusCode = 1, data = null } = payload;
   return {
     data,
