@@ -1,12 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '~/app.module';
 import { ValidationPipe, Logger } from '@nestjs/common';
-import * as cookieParser from 'cookie-parser';
+import fastifyCookie from '@fastify/cookie';
 
-const port = 3001;
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
+import * as process from 'process';
+
+const port = process.env.APP_PORT || 3001;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter({
+      logger: true,
+    }),
+  );
   // more info https://docs.nestjs.com/techniques/validation
   app.useGlobalPipes(
     new ValidationPipe({
@@ -15,7 +26,9 @@ async function bootstrap() {
     }),
   );
 
-  app.use(cookieParser());
+  await app.register(fastifyCookie, {
+    secret: process.env.MY_SECRET || 'my-secret',
+  });
   app.setGlobalPrefix('/api/v1');
   await app.listen(port);
 }

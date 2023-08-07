@@ -48,6 +48,6 @@ describe('UserController', () => {
   it('should be login success', async () => {
     await register(mockUser);
     const result = await login(mockUser);
-    expect(result.data.access_token).toBeDefined();
+    expect(result.data.token).toBeDefined();
   });
 });

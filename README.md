@@ -17,6 +17,7 @@ A template to get a nestjs server up and running
 - email: double_cl@163.com
 
 ## ✨ Feature
+- Fastify
 - winston log
 - jwt auth
 - env or dotEnv file

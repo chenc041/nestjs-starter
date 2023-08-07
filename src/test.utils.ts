@@ -1,17 +1,15 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { JwtModule } from '@nestjs/jwt';
-import { jwtConstants } from '~/constants';
+import { JwtModule, JwtService } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { WinstonModule } from 'nest-winston';
-import { ConfigModule as LoadEnvModule } from '@nestjs/config';
+import { ConfigModule as LoadEnvModule, ConfigService } from '@nestjs/config';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
-import { JwtStrategy } from '~/config/jwt-config/jwt.strategy';
 import { HttpModule } from '@nestjs/axios';
-import { CacheModule } from '@nestjs/common';
+import { CacheModule } from '@nestjs/cache-manager';
+import * as process from 'process';
 
-const { register: jwtRegister } = JwtModule;
 const { register: PassportRegister } = PassportModule;
 
 export const TypeOrmTestingModule = ({
@@ -37,9 +35,15 @@ export const TypeOrmTestingModule = ({
         entities: [join(__dirname, '../src/entities/*.entity.{ts,js}')],
       }),
       TypeOrmModule.forFeature(entities),
-      jwtRegister({
-        secret: jwtConstants.secret,
-        signOptions: { expiresIn: '10h' },
+      JwtModule.registerAsync({
+        useFactory: async (configService: ConfigService) => {
+          return {
+            signOptions: {
+              expiresIn: configService.get<string>('JWT_EXPIRED'),
+            },
+          };
+        },
+        inject: [ConfigService],
       }),
       LoadEnvModule.forRoot({
         isGlobal: true,
@@ -56,7 +60,7 @@ export const TypeOrmTestingModule = ({
     providers: [
       JwtConfigService,
       WinstonConfigService,
-      JwtStrategy,
+      JwtService,
       ...providers,
     ],
   };

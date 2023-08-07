@@ -20,7 +20,7 @@ describe('JwtConfigService', () => {
   });
 
   it('should be return token', async () => {
-    const token = await service.signToken({ username: 'chenc', userId: 1 });
-    expect(token.access_token).toBeDefined();
+    const { token } = await service.signToken({ username: 'chenc', userId: 1 });
+    expect(token).toBeDefined();
   });
 });

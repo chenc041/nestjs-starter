@@ -1,13 +1,12 @@
 import {
+  Res,
   Body,
   Controller,
   Get,
   Post,
   UseGuards,
-  CacheInterceptor,
   UseInterceptors,
   Inject,
-  CACHE_MANAGER,
 } from '@nestjs/common';
 import { UserService } from '~/user/user.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
@@ -19,16 +18,17 @@ import {
   generatePassword,
 } from '~/utils';
 import { omit } from 'lodash';
-import { User } from '~/decorators/user.decorator';
+import { GetUser } from '~/decorators/user.decorator';
 import { JwtAuthGuard } from '~/config/jwt-config/jwtAuth.guard';
-import { Cookies } from '~/decorators/cookies.decorator';
-import { Response } from 'express';
 import { AUTH_COOKIES_KEY } from '~/constants';
 import { HttpService } from '@nestjs/axios';
 import { map, Observable } from 'rxjs';
 import { Cache } from 'cache-manager';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
+import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
+import { FastifyReply } from 'fastify';
+import { UserType } from '~/base.type';
 
 @Controller('user')
 export class UserController {
@@ -43,8 +43,8 @@ export class UserController {
   @Post('login')
   async login(
     @Body() user: LoginDto,
-    @Cookies() cookies: Response,
-  ): Promise<HttpReturnType<{ access_token: string }>> {
+    @Res({ passthrough: true }) response: FastifyReply,
+  ): Promise<HttpReturnType<{ token: string }>> {
     const userInfo = await this.userService.checkUserIsExist({
       username: user.username,
     });
@@ -52,12 +52,14 @@ export class UserController {
       const isMatch = await comparePassword(user.password, userInfo.password);
       if (isMatch) {
         const { username, id } = userInfo;
-        const token = await this.jwt.signToken({ username, userId: id });
-        cookies.cookie(AUTH_COOKIES_KEY, token.access_token, {
+        const { token } = await this.jwt.signToken({ username, userId: id });
+        response.setCookie(AUTH_COOKIES_KEY, token, {
           httpOnly: true,
         });
         return HttpReturn({
-          data: token,
+          data: {
+            token,
+          },
         });
       }
       return HttpReturn({
@@ -89,15 +91,15 @@ export class UserController {
 
   @UseGuards(JwtAuthGuard)
   @Get('currentUser')
-  async currentUser(@User() user: any) {
+  async currentUser(@GetUser() user: UserType) {
     return HttpReturn({
       data: omit(user, 'password'),
     });
   }
 
   @Get('logout')
-  async logout(@Cookies() cookies: Response) {
-    cookies.cookie(AUTH_COOKIES_KEY, '', {
+  async logout(@Res({ passthrough: true }) response: FastifyReply) {
+    response.setCookie(AUTH_COOKIES_KEY, '', {
       expires: new Date(0),
     });
     return HttpReturn({
