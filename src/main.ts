@@ -15,7 +15,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({
-      logger: true,
+      logger: process.env.NODE_ENV === 'development',
     }),
   );
   // more info https://docs.nestjs.com/techniques/validation
@@ -27,7 +27,7 @@ async function bootstrap() {
   );
 
   await app.register(fastifyCookie, {
-    secret: process.env.MY_SECRET || 'my-secret',
+    secret: process.env.COOKIE_SECRET || 'cookie-secret',
   });
   app.setGlobalPrefix('/api/v1');
   await app.listen(port);

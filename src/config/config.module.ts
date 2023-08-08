@@ -19,10 +19,11 @@ import * as process from 'process';
     /**
      * default cache store is in-memory cache
      * if you want using other cache store, please read docs https://docs.nestjs.com/techniques/caching#different-stores
+     * TTL is milliseconds
      */
     CacheModule.register({
       isGlobal: true,
-      ttl: 3600 * 2,
+      ttl: 60 * 60 * 1000,
     }),
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,
