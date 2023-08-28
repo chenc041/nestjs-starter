@@ -33,14 +33,14 @@ describe('UserController', () => {
   };
 
   const login = async (payload: { username: string; password: string }) => {
-    return await controller.login(payload, { cookie: mockSetCookie } as any);
+    return await controller.login(payload, { setCookie: mockSetCookie } as any);
   };
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
 
-  it('user should be create success', async () => {
+  it('should create user success', async () => {
     const result = await register(mockUser);
     expect(result.data.id).toBeDefined();
   });

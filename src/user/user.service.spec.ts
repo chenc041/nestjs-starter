@@ -35,7 +35,7 @@ describe('UserService', () => {
 
   it('should be find one user', async () => {
     await create();
-    const user = await service.checkUserIsExist({ username: 'chenc' });
+    const user = await service.checkUserExist({ username: 'chenc' });
     expect(user.id).toBeDefined();
   });
 });

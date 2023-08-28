@@ -17,11 +17,11 @@
     "start:debug": "cross-env NODE_ENV=development nest start --debug --watch",
     "start:prod": "cross-env NODE_ENV=production node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
+    "test": "cross-env NODE_ENV=development jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
+    "test:cov": "cross-env NODE_ENV=development jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "cross-env NODE_ENV=development jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@fastify/cookie": "^9.0.4",
@@ -40,7 +40,7 @@
     "cache-manager": "^5.2.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
-    "fastify": "^4.22.0",
+    "fastify": "^4.21.0",
     "lodash": "^4.17.21",
     "mysql2": "^3.6.0",
     "nest-winston": "^1.9.4",

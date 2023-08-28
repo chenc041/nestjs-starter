@@ -35,15 +35,8 @@ export const TypeOrmTestingModule = ({
         entities: [join(__dirname, '../src/entities/*.entity.{ts,js}')],
       }),
       TypeOrmModule.forFeature(entities),
-      JwtModule.registerAsync({
-        useFactory: async (configService: ConfigService) => {
-          return {
-            signOptions: {
-              expiresIn: configService.get<string>('JWT_EXPIRED'),
-            },
-          };
-        },
-        inject: [ConfigService],
+      JwtModule.register({
+        global: true,
       }),
       LoadEnvModule.forRoot({
         isGlobal: true,

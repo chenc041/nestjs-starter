@@ -1,16 +1,20 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { TypeOrmTestingModule } from '~/test.utils';
 import { UserController } from '~/user/user.controller';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
-import * as cookieParser from 'cookie-parser';
 import { mockUser } from '~/test.mock.data';
+import fastifyCookie from '@fastify/cookie';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
+import { ValidationPipe } from '@nestjs/common';
 
 describe('UserController (e2e)', () => {
-  let app: INestApplication;
-  let token;
+  let app: NestFastifyApplication;
+  let token!: string;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule(
@@ -21,25 +25,41 @@ describe('UserController (e2e)', () => {
       }),
     ).compile();
 
-    app = moduleFixture.createNestApplication();
-    app.use(cookieParser());
+    app = moduleFixture.createNestApplication<NestFastifyApplication>(
+      new FastifyAdapter(),
+    );
+
+    app.useGlobalPipes(
+      new ValidationPipe({
+        whitelist: true,
+        transform: true,
+      }),
+    );
     app.setGlobalPrefix('/api/v1');
+    await app.register(fastifyCookie, {
+      secret: 'cookie-secret',
+    });
     await app.init();
+    await app.getHttpAdapter().getInstance().ready();
 
     await register(mockUser);
     token = await login(mockUser);
   });
 
-  const register = async (payload) => {
+  afterEach(async () => {
+    await app.close();
+  });
+
+  const register = async (payload: { username: string; password: string }) => {
     await request(app.getHttpServer())
       .post('/api/v1/user/register')
       .send(payload);
   };
-  const login = async (payload) => {
+  const login = async (payload: { username: string; password: string }) => {
     const userInfo = await request(app.getHttpServer())
       .post('/api/v1/user/login')
       .send(payload);
-    return userInfo.body.data.access_token;
+    return userInfo.body.data.token;
   };
 
   it('/api/v1/user/login (POST)', async () => {

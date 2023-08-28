@@ -42,14 +42,7 @@ import * as process from 'process';
     WinstonModule.forRootAsync({
       useClass: WinstonConfigService,
     }),
-    JwtModule.registerAsync({
-      useFactory: async (configService: ConfigService) => {
-        return {
-          signOptions: { expiresIn: configService.get<string>('JWT_EXPIRED') },
-        };
-      },
-      inject: [ConfigService],
-    }),
+    JwtModule.register({}),
   ],
   providers: [JwtConfigService, WinstonConfigService, JwtService],
   exports: [JwtConfigService, WinstonConfigService, JwtService],

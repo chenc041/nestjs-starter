@@ -27,8 +27,8 @@ import { Cache } from 'cache-manager';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
-import { FastifyReply } from 'fastify';
 import { UserType } from '~/base.type';
+import { FastifyReply } from 'fastify';
 
 @Controller('user')
 export class UserController {
@@ -45,12 +45,12 @@ export class UserController {
     @Body() user: LoginDto,
     @Res({ passthrough: true }) response: FastifyReply,
   ): Promise<HttpReturnType<{ token: string }>> {
-    const userInfo = await this.userService.checkUserIsExist({
+    const userInfo = await this.userService.checkUserExist({
       username: user.username,
     });
     if (userInfo) {
-      const isMatch = await comparePassword(user.password, userInfo.password);
-      if (isMatch) {
+      const match = await comparePassword(user.password, userInfo.password);
+      if (match) {
         const { username, id } = userInfo;
         const { token } = await this.jwt.signToken({ username, userId: id });
         response.setCookie(AUTH_COOKIES_KEY, token, {
@@ -65,19 +65,18 @@ export class UserController {
       return HttpReturn({
         statusCode: 10002,
       });
-    } else {
-      return HttpReturn({
-        statusCode: 10001,
-      });
     }
+    return HttpReturn({
+      statusCode: 10001,
+    });
   }
 
   @Post('register')
   async register(@Body() user: LoginDto) {
-    const isExist = await this.userService.checkUserIsExist({
+    const exist = await this.userService.checkUserExist({
       username: user.username,
     });
-    if (isExist) {
+    if (exist) {
       return HttpReturn({
         statusCode: 10003,
       });
@@ -85,7 +84,7 @@ export class UserController {
     const password = await generatePassword(user.password);
     const result = await this.userService.createUser({ ...user, password });
     return HttpReturn({
-      data: result,
+      data: omit(result, 'password'),
     });
   }
 
