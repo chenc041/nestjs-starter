@@ -27,7 +27,7 @@ jobs:
           cache: 'pnpm'
 
       - name: test
-        run: pnpm i && pnpm run test && pnpm run test:e2e
+        run: pnpm store prune && pnpm i && pnpm run test && pnpm run test:e2e
 
   coverage:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
           cache: 'pnpm'
 
       - name: install dep
-        run: pnpm i --no-lockfile
+        run: pnpm store prune && pnpm i
 
       - name: run test cov
         run: pnpm run test:cov
