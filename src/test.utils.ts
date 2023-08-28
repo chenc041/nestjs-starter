@@ -1,16 +1,13 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { JwtModule, JwtService } from '@nestjs/jwt';
-import { PassportModule } from '@nestjs/passport';
 import { WinstonModule } from 'nest-winston';
-import { ConfigModule as LoadEnvModule, ConfigService } from '@nestjs/config';
+import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { HttpModule } from '@nestjs/axios';
 import { CacheModule } from '@nestjs/cache-manager';
 import * as process from 'process';
-
-const { register: PassportRegister } = PassportModule;
 
 export const TypeOrmTestingModule = ({
   controllers,
@@ -44,7 +41,6 @@ export const TypeOrmTestingModule = ({
           join(__dirname, `../.${process.env.NODE_ENV || 'development'}.env`),
         ],
       }),
-      PassportRegister({ defaultStrategy: 'jwt' }),
       WinstonModule.forRootAsync({
         useClass: WinstonConfigService,
       }),

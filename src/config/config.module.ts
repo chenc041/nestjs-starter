@@ -3,8 +3,7 @@ import { WinstonModule } from 'nest-winston';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from './jwt-config/jwt-config.service';
 import { JwtModule, JwtService } from '@nestjs/jwt';
-import { PassportModule } from '@nestjs/passport';
-import { ConfigModule as LoadEnvModule, ConfigService } from '@nestjs/config';
+import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { join } from 'path';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -38,7 +37,6 @@ import * as process from 'process';
         ),
       ],
     }),
-    PassportModule.register({ defaultStrategy: 'jwt' }),
     WinstonModule.forRootAsync({
       useClass: WinstonConfigService,
     }),
