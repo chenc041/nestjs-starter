@@ -7,13 +7,11 @@ import { join } from 'path';
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   constructor(private readonly configService: ConfigService) {}
 
-  createTypeOrmOptions(
-    connectionName?: string,
-  ): Promise<TypeOrmModuleOptions> | TypeOrmModuleOptions {
+  createTypeOrmOptions(): Promise<TypeOrmModuleOptions> | TypeOrmModuleOptions {
     return {
       type: 'mysql',
       timezone: '+08:00',
-      name: connectionName || 'nestjs-starter',
+      bigNumberStrings: true,
       host: this.configService.get('DB_HOST'),
       port: Number(this.configService.get('DB_PORT')),
       username: this.configService.get('DB_USERNAME'),
