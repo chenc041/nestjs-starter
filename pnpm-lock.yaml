@@ -30,8 +30,8 @@ dependencies:
     specifier: ^10.0.1
     version: 10.0.1(@nestjs/common@10.2.2)(passport@0.6.0)
   '@nestjs/platform-fastify':
-    specifier: ^10.2.1
-    version: 10.2.1(@nestjs/common@10.2.2)(@nestjs/core@10.2.1)
+    specifier: ^10.2.2
+    version: 10.2.2(@nestjs/common@10.2.2)(@nestjs/core@10.2.1)
   '@nestjs/typeorm':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.2.2)(@nestjs/core@10.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typeorm@0.3.17)
@@ -1195,8 +1195,8 @@ packages:
       passport: 0.6.0
     dev: false
 
-  /@nestjs/platform-fastify@10.2.1(@nestjs/common@10.2.2)(@nestjs/core@10.2.1):
-    resolution: {integrity: sha512-ROY2K5Rl1ADYAx8JfOwZDNXrS0TYOCFmWUx9lhfgpUV7ppWfMrA1tV0Kjo+SDSwMpExXbLcNRwVzNCsLTqH/Lg==}
+  /@nestjs/platform-fastify@10.2.2(@nestjs/common@10.2.2)(@nestjs/core@10.2.1):
+    resolution: {integrity: sha512-mvXHje+q9JMIRYNAxgrMnx01TXjWovL++dZYtG9e0Nq2mvTGJo4iSQHBeyLjXsYS5zEsotnhkKS2uAMslsFY+A==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@fastify/view': ^7.0.0 || ^8.0.0
@@ -1216,7 +1216,7 @@ packages:
       fastify: 4.21.0
       light-my-request: 5.10.0
       path-to-regexp: 3.2.0
-      tslib: 2.6.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1334,7 +1334,7 @@ packages:
       is-glob: 4.0.3
       open: 9.1.0
       picocolors: 1.0.0
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: true
 
   /@sinclair/typebox@0.25.24:
@@ -5425,7 +5425,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/utils': 2.4.2
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: true
 
   /tapable@2.2.1:
