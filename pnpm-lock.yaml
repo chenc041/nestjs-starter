@@ -30,8 +30,8 @@ dependencies:
     specifier: ^10.0.1
     version: 10.0.1(@nestjs/common@10.2.2)(passport@0.6.0)
   '@nestjs/platform-fastify':
-    specifier: ^10.2.2
-    version: 10.2.2(@nestjs/common@10.2.2)(@nestjs/core@10.2.2)
+    specifier: ^10.2.3
+    version: 10.2.3(@nestjs/common@10.2.2)(@nestjs/core@10.2.2)
   '@nestjs/typeorm':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.2.2)(@nestjs/core@10.2.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)(typeorm@0.3.17)
@@ -1195,8 +1195,8 @@ packages:
       passport: 0.6.0
     dev: false
 
-  /@nestjs/platform-fastify@10.2.2(@nestjs/common@10.2.2)(@nestjs/core@10.2.2):
-    resolution: {integrity: sha512-mvXHje+q9JMIRYNAxgrMnx01TXjWovL++dZYtG9e0Nq2mvTGJo4iSQHBeyLjXsYS5zEsotnhkKS2uAMslsFY+A==}
+  /@nestjs/platform-fastify@10.2.3(@nestjs/common@10.2.2)(@nestjs/core@10.2.2):
+    resolution: {integrity: sha512-g6R6T5s2JkyN5O1T0ThEP0yt9QicM8px7EJ4jdQ9UN1Iv7pdD6T0nHPDD8hcNpIf9G4jcP/5fS+Z8k0CUF2RIA==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@fastify/view': ^7.0.0 || ^8.0.0
@@ -1213,7 +1213,7 @@ packages:
       '@fastify/middie': 8.3.0
       '@nestjs/common': 10.2.2(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.2.2(@nestjs/common@10.2.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      fastify: 4.21.0
+      fastify: 4.22.0
       light-my-request: 5.10.0
       path-to-regexp: 3.2.0
       tslib: 2.6.2
@@ -2915,6 +2915,29 @@ packages:
 
   /fastify@4.21.0:
     resolution: {integrity: sha512-tsu4bcwE4HetxqW8prA5fbC9bKHMYDp7jGEDWyzK1l90a3uOaLoIcQbdGcWeODNLVJviQnzh1wvIjTZE3MJFEg==}
+    dependencies:
+      '@fastify/ajv-compiler': 3.5.0
+      '@fastify/error': 3.3.0
+      '@fastify/fast-json-stringify-compiler': 4.3.0
+      abstract-logging: 2.0.1
+      avvio: 8.2.1
+      fast-content-type-parse: 1.0.0
+      fast-json-stringify: 5.8.0
+      find-my-way: 7.6.2
+      light-my-request: 5.10.0
+      pino: 8.15.0
+      process-warning: 2.2.0
+      proxy-addr: 2.0.7
+      rfdc: 1.3.0
+      secure-json-parse: 2.7.0
+      semver: 7.5.4
+      tiny-lru: 11.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /fastify@4.22.0:
+    resolution: {integrity: sha512-HLoBmetdQ6zaJohKW6jzUww8NnwHzkbIbUEyAzM+Nnf7cZVSXRuUV+6b2/xLmu6GGkruIFJ/bIQoKWYRx4wnAQ==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.3.0
@@ -6075,7 +6098,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: https://registry.npmmirror.com/, tarball: https://mirrors.tencent.com/npm/cross-env/-/cross-env-7.0.3.tgz}
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: https://registry.npmjs.org/, tarball: https://mirrors.tencent.com/npm/cross-env/-/cross-env-7.0.3.tgz}
     name: cross-env
     version: 7.0.3
     engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
@@ -6085,7 +6108,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==, registry: https://registry.npmmirror.com/, tarball: https://mirrors.tencent.com/npm/cross-spawn/-/cross-spawn-7.0.3.tgz}
+    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==, registry: https://registry.npmjs.org/, tarball: https://mirrors.tencent.com/npm/cross-spawn/-/cross-spawn-7.0.3.tgz}
     name: cross-spawn
     version: 7.0.3
     engines: {node: '>= 8'}
