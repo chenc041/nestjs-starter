@@ -12,10 +12,10 @@ import { UserService } from '~/user/user.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { LoginDto } from '~/dtos/login.dto';
 import {
-  HttpReturn,
-  HttpReturnType,
+  HttpResponseType,
   comparePassword,
   generatePassword,
+  HttpResponse,
 } from '~/utils';
 import { omit } from 'lodash';
 import { GetUser } from '~/decorators/user.decorator';
@@ -44,7 +44,7 @@ export class UserController {
   async login(
     @Body() user: LoginDto,
     @Res({ passthrough: true }) response: FastifyReply,
-  ): Promise<HttpReturnType<{ token: string }>> {
+  ): Promise<HttpResponseType<{ token: string }>> {
     const userInfo = await this.userService.checkUserExist({
       username: user.username,
     });
@@ -56,17 +56,17 @@ export class UserController {
         response.setCookie(AUTH_COOKIES_KEY, token, {
           httpOnly: true,
         });
-        return HttpReturn({
+        return new HttpResponse({
           data: {
             token,
           },
         });
       }
-      return HttpReturn({
+      return new HttpResponse({
         statusCode: 10002,
       });
     }
-    return HttpReturn({
+    return new HttpResponse({
       statusCode: 10001,
     });
   }
@@ -77,13 +77,13 @@ export class UserController {
       username: user.username,
     });
     if (exist) {
-      return HttpReturn({
+      return new HttpResponse({
         statusCode: 10003,
       });
     }
     const password = await generatePassword(user.password);
     const result = await this.userService.createUser({ ...user, password });
-    return HttpReturn({
+    return new HttpResponse({
       data: omit(result, 'password'),
     });
   }
@@ -91,7 +91,7 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   @Get('currentUser')
   async currentUser(@GetUser() user: UserType) {
-    return HttpReturn({
+    return new HttpResponse({
       data: omit(user, 'password'),
     });
   }
@@ -101,15 +101,21 @@ export class UserController {
     response.setCookie(AUTH_COOKIES_KEY, '', {
       expires: new Date(0),
     });
-    return HttpReturn({
+    return new HttpResponse({
       statusCode: 10000,
     });
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('cache')
   async cache() {
-    await this.cacheManager.set('test', 'chenc');
-    return await this.cacheManager.get('test');
+    await this.cacheManager.set('test', 'chen');
+    const cacheValue = await this.cacheManager.get<string>('test');
+    return new HttpResponse({
+      data: {
+        cacheValue,
+      },
+    });
   }
 
   @Get('log')
