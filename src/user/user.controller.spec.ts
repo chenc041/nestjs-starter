@@ -3,7 +3,7 @@ import { UserController } from './user.controller';
 import { TypeOrmTestingModule } from '~/test.utils';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
-import { HttpReturnType } from '~/utils';
+import { HttpResponseType } from '~/utils';
 import { mockUser } from '~/test.mock.data';
 
 describe('UserController', () => {
@@ -28,7 +28,7 @@ describe('UserController', () => {
   const register = async (payload: {
     username: string;
     password: string;
-  }): Promise<HttpReturnType> => {
+  }): Promise<HttpResponseType> => {
     return await controller.register(payload);
   };
 
