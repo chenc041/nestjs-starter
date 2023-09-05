@@ -1,12 +1,11 @@
 import * as bcrypt from 'bcryptjs';
 import { bizCode } from '~/biz.code';
-
-export interface HttpReturnType<T = any> {
+export interface HttpResponseType<T = any> {
   data?: T;
   statusCode?: keyof typeof bizCode;
 }
 
-export const HttpReturn = <T>(payload: HttpReturnType<T>) => {
+export const HttpReturn = <T>(payload: HttpResponseType<T>) => {
   const { statusCode = 1, data = null } = payload;
   return {
     data,
@@ -14,6 +13,18 @@ export const HttpReturn = <T>(payload: HttpReturnType<T>) => {
     message: bizCode[statusCode],
   };
 };
+
+export class HttpResponse<T = any> {
+  data?: T;
+  message?: string;
+  statusCode?: keyof typeof bizCode;
+  constructor(payload: HttpResponseType<T>) {
+    const { statusCode = 1, data = null } = payload;
+    this.data = data;
+    this.statusCode = statusCode;
+    this.message = bizCode[statusCode];
+  }
+}
 
 /**
  * generatePassword

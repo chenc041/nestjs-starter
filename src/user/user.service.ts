@@ -14,10 +14,13 @@ export class UserService {
     return await this.usersRepository.save(payload);
   }
 
-  async checkUserExist(payload: { username: string }) {
+  async checkUserExist(payload: { username?: string; userId?: number }) {
     const where: FindOptionsWhere<UserEntity> = {};
     if (payload.username) {
       where.username = payload.username;
+    }
+    if (payload.userId) {
+      where.id = payload.userId;
     }
     return await this.usersRepository.findOneBy(where);
   }
