@@ -5,7 +5,7 @@ import { UserController } from '~/user/user.controller';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
 import { mockUser } from '~/test.mock.data';
-import fastifyCookie from '@fastify/cookie';
+import fastifyCookie, { FastifyCookie } from '@fastify/cookie';
 import {
   FastifyAdapter,
   NestFastifyApplication,
@@ -36,7 +36,7 @@ describe('UserController (e2e)', () => {
       }),
     );
     app.setGlobalPrefix('/api/v1');
-    await app.register(fastifyCookie, {
+    await app.register(fastifyCookie as any, {
       secret: 'cookie-secret',
     });
     await app.init();
