@@ -5,7 +5,7 @@ import { UserController } from '~/user/user.controller';
 import { UserService } from '~/user/user.service';
 import { UserEntity } from '~/entities/user.entity';
 import { mockUser } from '~/test.mock.data';
-import fastifyCookie, { FastifyCookie } from '@fastify/cookie';
+import fastifyCookie from '@fastify/cookie';
 import {
   FastifyAdapter,
   NestFastifyApplication,
