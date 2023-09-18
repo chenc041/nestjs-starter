@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^10.2.5
     version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)
   '@types/bcryptjs':
-    specifier: ^2.4.3
-    version: 2.4.3
+    specifier: ^2.4.4
+    version: 2.4.4
   '@types/cache-manager':
     specifier: ^4.0.3
     version: 4.0.3
@@ -1389,8 +1389,8 @@ packages:
       '@babel/types': 7.16.8
     dev: true
 
-  /@types/bcryptjs@2.4.3:
-    resolution: {integrity: sha512-XTnH9E/rp51aKGsiMtQCHV/owDLW2E9QAxI7ItpWWm6Gi6XO1e4o3VuEYDma0lbitj1vNOBj05Qk8l2BYoiN4A==}
+  /@types/bcryptjs@2.4.4:
+    resolution: {integrity: sha512-9wlJI7k5gRyJEC4yrV7DubzNQFTPiykYxUA6lBtsk5NlOfW9oWLJ1HdIA4YtE+6C3i3mTpDQQEosJ2rVZfBWnw==}
     dev: true
 
   /@types/cache-manager@4.0.3:
@@ -6090,7 +6090,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: https://registry.npmmirror.com/, tarball: https://mirrors.tencent.com/npm/cross-env/-/cross-env-7.0.3.tgz}
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==, registry: https://registry.npmjs.org/, tarball: https://mirrors.tencent.com/npm/cross-env/-/cross-env-7.0.3.tgz}
     name: cross-env
     version: 7.0.3
     engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
@@ -6100,7 +6100,7 @@ packages:
     dev: true
 
   mirrors.tencent.com/cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==, registry: https://registry.npmmirror.com/, tarball: https://mirrors.tencent.com/npm/cross-spawn/-/cross-spawn-7.0.3.tgz}
+    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==, registry: https://registry.npmjs.org/, tarball: https://mirrors.tencent.com/npm/cross-spawn/-/cross-spawn-7.0.3.tgz}
     name: cross-spawn
     version: 7.0.3
     engines: {node: '>= 8'}
