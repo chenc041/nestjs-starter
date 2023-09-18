@@ -57,7 +57,7 @@
     "@types/cache-manager": "^4.0.3",
     "@types/jest": "29.5.4",
     "@types/lodash": "^4.14.198",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.6.2",
     "@types/superagent": "4.1.18",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
