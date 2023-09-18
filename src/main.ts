@@ -26,7 +26,7 @@ async function bootstrap() {
     }),
   );
 
-  await app.register(fastifyCookie as any, {
+  await app.register(fastifyCookie, {
     secret: process.env.COOKIE_SECRET || 'cookie-secret',
   });
   app.setGlobalPrefix('/api/v1');
