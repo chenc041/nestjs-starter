@@ -55,7 +55,7 @@
     "@nestjs/testing": "^10.2.5",
     "@types/bcryptjs": "^2.4.3",
     "@types/cache-manager": "^4.0.3",
-    "@types/jest": "29.5.4",
+    "@types/jest": "29.5.5",
     "@types/lodash": "^4.14.198",
     "@types/node": "^20.6.0",
     "@types/superagent": "4.1.18",
