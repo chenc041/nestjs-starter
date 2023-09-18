@@ -36,7 +36,7 @@ describe('UserController (e2e)', () => {
       }),
     );
     app.setGlobalPrefix('/api/v1');
-    await app.register(() => fastifyCookie, {
+    await app.register(fastifyCookie, {
       secret: 'cookie-secret',
     });
     await app.init();
