@@ -61,7 +61,7 @@
     "@types/superagent": "4.1.18",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.2",
     "better-sqlite3": "^8.6.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.49.0",
