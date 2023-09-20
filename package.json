@@ -24,7 +24,7 @@
     "test:e2e": "cross-env NODE_ENV=development jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@fastify/cookie": "^9.0.4",
+    "@fastify/cookie": "^9.1.0",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/cache-manager": "^2.1.0",
     "@nestjs/common": "^10.2.5",
