@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: test
-        run: pnpm i && pnpm run test && pnpm run test:e2e
+        run: pnpm i --no-frozen-lockfile && pnpm run test && pnpm run test:e2e
 
   coverage:
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: install dependent
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
 
       - name: run test cov
         run: pnpm run test:cov
