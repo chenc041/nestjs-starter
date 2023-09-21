@@ -29,7 +29,9 @@ import { Logger } from 'winston';
 import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
 import { UserType } from '~/base.type';
 import { FastifyReply } from 'fastify';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Users')
 @Controller('user')
 export class UserController {
   constructor(

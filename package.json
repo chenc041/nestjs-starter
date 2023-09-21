@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@fastify/cookie": "^9.1.0",
+    "@fastify/static": "^6.11.2",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/cache-manager": "^2.1.0",
     "@nestjs/common": "^10.2.5",
@@ -32,6 +33,8 @@
     "@nestjs/core": "^10.2.5",
     "@nestjs/jwt": "^10.1.1",
     "@nestjs/platform-fastify": "^10.2.5",
+    "@nestjs/serve-static": "^4.0.0",
+    "@nestjs/swagger": "^7.1.11",
     "@nestjs/typeorm": "^10.0.0",
     "axios": "^1.5.0",
     "bcryptjs": "^2.4.3",
