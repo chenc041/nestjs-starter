@@ -8,6 +8,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import * as process from 'process';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 const port = process.env.APP_PORT || 3001;
 
@@ -30,6 +31,16 @@ async function bootstrap() {
     secret: process.env.COOKIE_SECRET || 'cookie-secret',
   });
   app.setGlobalPrefix('/api/v1');
+
+  const config = new DocumentBuilder()
+    .setTitle('Nestjs api document')
+    .setDescription('api document by Swagger')
+    .setVersion('1.0')
+    .addTag('Nestjs starter docs')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('docs', app, document);
+
   await app.listen(port);
 }
 
