@@ -63,7 +63,7 @@
     "@types/node": "^20.6.5",
     "@types/superagent": "4.1.19",
     "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.2",
     "better-sqlite3": "^8.6.0",
     "cross-env": "^7.0.3",
