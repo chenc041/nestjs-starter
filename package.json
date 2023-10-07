@@ -62,7 +62,7 @@
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.6.5",
     "@types/superagent": "4.1.19",
-    "@types/supertest": "^2.0.12",
+    "@types/supertest": "^2.0.14",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "better-sqlite3": "^8.6.0",
