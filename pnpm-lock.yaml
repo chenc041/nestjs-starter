@@ -76,7 +76,7 @@ dependencies:
     version: 7.8.1
   typeorm:
     specifier: ^0.3.17
-    version: 0.3.17(better-sqlite3@8.6.0)(mysql2@3.6.1)(ts-node@10.9.1)
+    version: 0.3.17(better-sqlite3@9.0.0)(mysql2@3.6.1)(ts-node@10.9.1)
   webpack:
     specifier: ^5.88.2
     version: 5.88.2
@@ -125,8 +125,8 @@ devDependencies:
     specifier: ^6.7.4
     version: 6.7.4(eslint@8.50.0)(typescript@5.2.2)
   better-sqlite3:
-    specifier: ^8.6.0
-    version: 8.6.0
+    specifier: ^9.0.0
+    version: 9.0.0
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -1334,7 +1334,7 @@ packages:
       '@nestjs/core': 10.2.6(@nestjs/common@10.2.6)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      typeorm: 0.3.17(better-sqlite3@8.6.0)(mysql2@3.6.1)(ts-node@10.9.1)
+      typeorm: 0.3.17(better-sqlite3@9.0.0)(mysql2@3.6.1)(ts-node@10.9.1)
       uuid: 9.0.0
     dev: false
 
@@ -2064,8 +2064,8 @@ packages:
     resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
     dev: false
 
-  /better-sqlite3@8.6.0:
-    resolution: {integrity: sha512-jwAudeiTMTSyby+/SfbHDebShbmC2MCH8mU2+DXi0WJfv13ypEJm47cd3kljmy/H130CazEvkf2Li//ewcMJ1g==}
+  /better-sqlite3@9.0.0:
+    resolution: {integrity: sha512-lDxQ9qg/XuUHZG6xzrQaMHkNWl37t35/LPB/VJGV8DdScSuGFNfFSqgscXEd8UIuyk/d9wU8iaMxQa4If5Wqog==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -5745,7 +5745,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typeorm@0.3.17(better-sqlite3@8.6.0)(mysql2@3.6.1)(ts-node@10.9.1):
+  /typeorm@0.3.17(better-sqlite3@9.0.0)(mysql2@3.6.1)(ts-node@10.9.1):
     resolution: {integrity: sha512-UDjUEwIQalO9tWw9O2A4GU+sT3oyoUXheHJy4ft+RFdnRdQctdQ34L9SqE2p7LdwzafHx1maxT+bqXON+Qnmig==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -5805,7 +5805,7 @@ packages:
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
-      better-sqlite3: 8.6.0
+      better-sqlite3: 9.0.0
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
