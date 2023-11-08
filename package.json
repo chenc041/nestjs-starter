@@ -59,7 +59,7 @@
     "@types/bcryptjs": "^2.4.4",
     "@types/cache-manager": "^4.0.3",
     "@types/jest": "29.5.7",
-    "@types/lodash": "^4.14.199",
+    "@types/lodash": "^4.14.201",
     "@types/node": "^20.8.9",
     "@types/superagent": "4.1.20",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
