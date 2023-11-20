@@ -95,8 +95,8 @@ devDependencies:
     specifier: ^10.0.2
     version: 10.0.2(chokidar@3.5.3)(typescript@5.2.2)
   '@nestjs/testing':
-    specifier: ^10.2.6
-    version: 10.2.6(@nestjs/common@10.2.6)(@nestjs/core@10.2.8)
+    specifier: ^10.2.9
+    version: 10.2.9(@nestjs/common@10.2.6)(@nestjs/core@10.2.8)
   '@types/bcryptjs':
     specifier: ^2.4.4
     version: 2.4.4
@@ -1304,8 +1304,8 @@ packages:
       swagger-ui-dist: 5.9.0
     dev: false
 
-  /@nestjs/testing@10.2.6(@nestjs/common@10.2.6)(@nestjs/core@10.2.8):
-    resolution: {integrity: sha512-uxlxHhpSvG4yDTPmuPneoQL1/UnBkOkzE+Zaz6bwURg7lc3uS4ZsXl75OL3pYaJH37rHYXYT9bGcYSpxVbwIrg==}
+  /@nestjs/testing@10.2.9(@nestjs/common@10.2.6)(@nestjs/core@10.2.8):
+    resolution: {integrity: sha512-E+66R27Op+WAQHHH6RnUsz7QpKApl4Bn42nheCAGvS/sxbaDJ8RKtm4stE4Iz2aioPCUvRi8j4z8Ze73k0CcGQ==}
     peerDependencies:
       '@nestjs/common': ^10.0.0
       '@nestjs/core': ^10.0.0
