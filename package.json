@@ -61,7 +61,7 @@
     "@types/jest": "29.5.8",
     "@types/lodash": "^4.14.201",
     "@types/node": "^20.9.2",
-    "@types/superagent": "4.1.22",
+    "@types/superagent": "4.1.24",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@types/supertest": "^2.0.16",
     "@typescript-eslint/parser": "^6.11.0",
