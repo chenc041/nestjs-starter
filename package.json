@@ -55,7 +55,7 @@
   "devDependencies": {
     "@nestjs/cli": "^10.2.1",
     "@nestjs/schematics": "^10.0.3",
-    "@nestjs/testing": "^10.2.9",
+    "@nestjs/testing": "^10.2.10",
     "@types/bcryptjs": "^2.4.6",
     "@types/cache-manager": "^4.0.5",
     "@types/jest": "29.5.11",
