@@ -1,21 +1,21 @@
 import {
-  Res,
   Body,
   Controller,
   Get,
+  Inject,
   Post,
+  Res,
   UseGuards,
   UseInterceptors,
-  Inject,
 } from '@nestjs/common';
 import { UserService } from '~/user/user.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { LoginDto } from '~/dtos/login.dto';
 import {
-  HttpResponseType,
   comparePassword,
   generatePassword,
   HttpResponse,
+  HttpResponseType,
 } from '~/utils';
 import { omit } from 'lodash';
 import { GetUser } from '~/decorators/user.decorator';
