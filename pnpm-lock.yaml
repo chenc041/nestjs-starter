@@ -63,8 +63,8 @@ dependencies:
     specifier: ^4.17.21
     version: 4.17.21
   mysql2:
-    specifier: ^3.6.5
-    version: 3.6.5
+    specifier: ^3.7.1
+    version: 3.7.1
   nest-winston:
     specifier: ^1.9.4
     version: 1.9.4(@nestjs/common@10.2.10)(winston@3.11.0)
@@ -76,7 +76,7 @@ dependencies:
     version: 7.8.1
   typeorm:
     specifier: ^0.3.17
-    version: 0.3.17(better-sqlite3@9.2.2)(mysql2@3.6.5)(ts-node@10.9.2)
+    version: 0.3.17(better-sqlite3@9.2.2)(mysql2@3.7.1)(ts-node@10.9.2)
   webpack:
     specifier: ^5.89.0
     version: 5.89.0
@@ -1347,7 +1347,7 @@ packages:
       '@nestjs/core': 10.2.10(@nestjs/common@10.2.10)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
-      typeorm: 0.3.17(better-sqlite3@9.2.2)(mysql2@3.6.5)(ts-node@10.9.2)
+      typeorm: 0.3.17(better-sqlite3@9.2.2)(mysql2@3.7.1)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -4604,8 +4604,8 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /mysql2@3.6.5:
-    resolution: {integrity: sha512-pS/KqIb0xlXmtmqEuTvBXTmLoQ5LmAz5NW/r8UyQ1ldvnprNEj3P9GbmuQQ2J0A4LO+ynotGi6TbscPa8OUb+w==}
+  /mysql2@3.7.1:
+    resolution: {integrity: sha512-4EEqYu57mnkW5+Bvp5wBebY7PpfyrmvJ3knHcmLkp8FyBu4kqgrF2GxIjsC2tbLNZWqJaL21v/MYH7bU5f03oA==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -5887,7 +5887,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typeorm@0.3.17(better-sqlite3@9.2.2)(mysql2@3.6.5)(ts-node@10.9.2):
+  /typeorm@0.3.17(better-sqlite3@9.2.2)(mysql2@3.7.1)(ts-node@10.9.2):
     resolution: {integrity: sha512-UDjUEwIQalO9tWw9O2A4GU+sT3oyoUXheHJy4ft+RFdnRdQctdQ34L9SqE2p7LdwzafHx1maxT+bqXON+Qnmig==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
@@ -5956,7 +5956,7 @@ packages:
       dotenv: 16.3.1
       glob: 8.1.0
       mkdirp: 2.1.6
-      mysql2: 3.6.5
+      mysql2: 3.7.1
       reflect-metadata: 0.1.14
       sha.js: 2.4.11
       ts-node: 10.9.2(@types/node@20.11.4)(typescript@5.3.3)
