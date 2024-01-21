@@ -17,6 +17,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter({
       logger: process.env.NODE_ENV === 'development',
+      trustProxy: true
     }),
   );
   // more info https://docs.nestjs.com/techniques/validation
@@ -27,7 +28,7 @@ async function bootstrap() {
     }),
   );
 
-  await app.register(fastifyCookie, {
+  await app.register(fastifyCookie as any, {
     secret: process.env.COOKIE_SECRET || 'cookie-secret',
   });
   app.setGlobalPrefix('/api/v1');
