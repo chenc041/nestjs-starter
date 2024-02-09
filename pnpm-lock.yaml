@@ -84,8 +84,8 @@ dependencies:
     specifier: ^3.11.0
     version: 3.11.0
   winston-daily-rotate-file:
-    specifier: ^4.7.1
-    version: 4.7.1(winston@3.11.0)
+    specifier: ^5.0.0
+    version: 5.0.0(winston@3.11.0)
 
 devDependencies:
   '@nestjs/cli':
@@ -4545,8 +4545,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /object-hash@2.2.0:
-    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
+  /object-hash@3.0.0:
+    resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
     dev: false
 
@@ -5952,22 +5952,31 @@ packages:
     dependencies:
       isexe: 2.0.0
 
-  /winston-daily-rotate-file@4.7.1(winston@3.11.0):
-    resolution: {integrity: sha512-7LGPiYGBPNyGHLn9z33i96zx/bd71pjBn9tqQzO3I4Tayv94WPmBNwKC7CO1wPHdP9uvu+Md/1nr6VSH9h0iaA==}
+  /winston-daily-rotate-file@5.0.0(winston@3.11.0):
+    resolution: {integrity: sha512-JDjiXXkM5qvwY06733vf09I2wnMXpZEhxEVOSPenZMii+g7pcDcTBt2MRugnoi8BwVSuCT2jfRXBUy+n1Zz/Yw==}
     engines: {node: '>=8'}
     peerDependencies:
       winston: ^3
     dependencies:
       file-stream-rotator: 0.6.1
-      object-hash: 2.2.0
+      object-hash: 3.0.0
       triple-beam: 1.4.1
       winston: 3.11.0
-      winston-transport: 4.5.0
+      winston-transport: 4.7.0
     dev: false
 
   /winston-transport@4.5.0:
     resolution: {integrity: sha512-YpZzcUzBedhlTAfJg6vJDlyEai/IFMIVcaEZZyl3UXIl4gmqRpU7AE89AHLkbzLUsv0NVmw7ts+iztqKxxPW1Q==}
     engines: {node: '>= 6.4.0'}
+    dependencies:
+      logform: 2.5.1
+      readable-stream: 3.6.2
+      triple-beam: 1.4.1
+    dev: false
+
+  /winston-transport@4.7.0:
+    resolution: {integrity: sha512-ajBj65K5I7denzer2IYW6+2bNIVqLGDHqDw3Ow8Ohh+vdW+rv4MZ6eiDvHoKhfJFZ2auyN8byXieDDJ96ViONg==}
+    engines: {node: '>= 12.0.0'}
     dependencies:
       logform: 2.5.1
       readable-stream: 3.6.2
