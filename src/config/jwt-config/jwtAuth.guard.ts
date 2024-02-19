@@ -2,20 +2,18 @@ import {
   CanActivate,
   ExecutionContext,
   Injectable,
-  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { FastifyRequest } from 'fastify';
-import { UserService } from '~/user/user.service';
+import { AUTH_COOKIES_KEY } from '~/constants';
 
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
   constructor(
     private jwtService: JwtService,
     private configService: ConfigService,
-    private userService: UserService,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -35,17 +33,12 @@ export class JwtAuthGuard implements CanActivate {
     } catch (error) {
       throw new UnauthorizedException(error.message);
     }
-    const exist = await this.userService.checkUserExist({
-      userId: user.userId,
-    });
-    if (!exist) {
-      throw new NotFoundException('User not found');
-    }
     request['user'] = user;
     return true;
   }
   private extractTokenFromHeader(request: FastifyRequest): string | undefined {
-    const [, token] = request.headers.cookie?.split('=') ?? [];
+    const token =
+      request.headers.authorization || request.cookies[AUTH_COOKIES_KEY];
     return token ? token : undefined;
   }
 }
