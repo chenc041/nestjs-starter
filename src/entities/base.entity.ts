@@ -10,9 +10,15 @@ export abstract class BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({
+    name: 'create_at',
+    comment: '创建时间',
+  })
   createAt: string;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({
+    name: 'update_at',
+    comment: '更新时间',
+  })
   updateAt: string;
 }
