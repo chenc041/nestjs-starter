@@ -8,6 +8,29 @@ import {
 
 const { json, timestamp, combine } = winston.format;
 
+const infoFilter = winston.format((info) => {
+  return info.level === 'info' || info.level === 'warn' ? info : false;
+});
+
+const errorFilter = winston.format((info) => {
+  return info.level === 'error' ? info : false;
+});
+
+const debugFilter = winston.format((info) => {
+  return info.level === 'debug' ? info : false;
+});
+
+const warnFilter = winston.format((info) => {
+  return info.level === 'warn' ? info : false;
+});
+
+const levelFormat = {
+  error: errorFilter,
+  info: infoFilter,
+  warn: warnFilter,
+  debug: debugFilter,
+};
+
 @Injectable()
 export class WinstonConfigService implements WinstonModuleOptionsFactory {
   createWinstonModuleOptions(): WinstonModuleOptions {
@@ -23,6 +46,7 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
             maxSize: '5m',
             maxFiles: '14d',
             zippedArchive: true,
+            format: combine(levelFormat[item](), timestamp(), json()),
             datePattern: 'YYYY-MM-DD',
             filename: `log/api-${item}-%DATE%.log`,
           }),
@@ -31,7 +55,6 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
     }
     return {
       transports: transports,
-      format: combine(timestamp(), json()),
       defaultMeta: {
         appName: 'nestjs-starter',
       },
