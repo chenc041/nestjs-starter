@@ -1,20 +1,17 @@
 import { Global, Module } from '@nestjs/common';
 import { WinstonModule } from 'nest-winston';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
-import { JwtConfigService } from './jwt-config/jwt-config.service';
-import { JwtModule, JwtService } from '@nestjs/jwt';
-import { ConfigModule as LoadEnvModule } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule as LoadEnvModule, ConfigService } from '@nestjs/config';
 import { join } from 'path';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { HttpModule } from '@nestjs/axios';
 import { CacheModule } from '@nestjs/cache-manager';
 import * as process from 'process';
 
 @Global()
 @Module({
   imports: [
-    HttpModule,
     /**
      * default cache store is in-memory cache
      * if you want using other cache store, please read docs https://docs.nestjs.com/techniques/caching#different-stores
@@ -40,9 +37,18 @@ import * as process from 'process';
     WinstonModule.forRootAsync({
       useClass: WinstonConfigService,
     }),
-    JwtModule.register({}),
+    JwtModule.registerAsync({
+      useFactory: (configService: ConfigService) => {
+        return {
+          global: true,
+          secret: configService.get('JWT_SECRET'),
+          signOptions: {
+            expiresIn: configService.get('JWT_EXPIRES_IN'),
+          },
+        };
+      },
+      inject: [ConfigService],
+    }),
   ],
-  providers: [JwtConfigService, WinstonConfigService, JwtService],
-  exports: [JwtConfigService, WinstonConfigService, JwtService],
 })
 export class ConfigModule {}

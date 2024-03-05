@@ -25,8 +25,8 @@ export class JwtAuthGuard implements CanActivate {
     let user = undefined;
     try {
       user = await this.jwtService.verifyAsync<{
-        username: string;
         userId: number;
+        username: string;
       }>(token, {
         secret: this.configService.get<string>('JWT_SECRET'),
       });
@@ -36,6 +36,7 @@ export class JwtAuthGuard implements CanActivate {
     request['user'] = user;
     return true;
   }
+
   private extractTokenFromHeader(request: FastifyRequest): string | undefined {
     const token =
       request.headers.authorization || request.cookies[AUTH_COOKIES_KEY];
