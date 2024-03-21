@@ -113,8 +113,8 @@ devDependencies:
     specifier: ^20.11.28
     version: 20.11.28
   '@types/superagent':
-    specifier: 8.1.4
-    version: 8.1.4
+    specifier: 8.1.5
+    version: 8.1.5
   '@types/supertest':
     specifier: ^6.0.2
     version: 6.0.2
@@ -1557,8 +1557,8 @@ packages:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
     dev: true
 
-  /@types/superagent@8.1.4:
-    resolution: {integrity: sha512-uzSBYwrpal8y2X2Pul5ZSWpzRiDha2FLcquaN95qUPnOjYgm/zQ5LIdqeJpQJTRWNTN+Rhm0aC8H06Ds2rqCYw==}
+  /@types/superagent@8.1.5:
+    resolution: {integrity: sha512-4E+74d2fmrJ6zAK81YihtMzXnISS8udlwV853CNTuO4/untcUAEfO7BTqrQfVMP4sGQ6HOctr03UCeQ/+i6tww==}
     dependencies:
       '@types/cookiejar': 2.1.5
       '@types/methods': 1.1.4
@@ -1569,7 +1569,7 @@ packages:
     resolution: {integrity: sha512-137ypx2lk/wTQbW6An6safu9hXmajAifU/s7szAHLN/FeIm5w7yR0Wkl9fdJMRSHwOn4HLAI0DaB2TOORuhPDg==}
     dependencies:
       '@types/methods': 1.1.4
-      '@types/superagent': 8.1.4
+      '@types/superagent': 8.1.5
     dev: true
 
   /@types/triple-beam@1.3.5:
