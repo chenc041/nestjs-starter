@@ -64,7 +64,7 @@ dependencies:
     version: 4.17.21
   mysql2:
     specifier: ^3.9.2
-    version: 3.9.2
+    version: 3.9.3
   nest-winston:
     specifier: ^1.9.4
     version: 1.9.4(@nestjs/common@10.3.5)(winston@3.13.0)
@@ -76,7 +76,7 @@ dependencies:
     version: 7.8.1
   typeorm:
     specifier: ^0.3.20
-    version: 0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.2)(ts-node@10.9.2)
+    version: 0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.3)(ts-node@10.9.2)
   webpack:
     specifier: ^5.90.3
     version: 5.91.0
@@ -1374,7 +1374,7 @@ packages:
       '@nestjs/core': 10.3.5(@nestjs/common@10.3.5)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
-      typeorm: 0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.2)(ts-node@10.9.2)
+      typeorm: 0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.3)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -3558,7 +3558,7 @@ packages:
     dev: true
 
   /is-property@1.0.2:
-    resolution: {integrity: sha1-V/4cTkhHTt1lsJkR8msc1Ald2oQ=}
+    resolution: {integrity: sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==}
     dev: false
 
   /is-stream@2.0.1:
@@ -4483,8 +4483,8 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
-  /mysql2@3.9.2:
-    resolution: {integrity: sha512-3Cwg/UuRkAv/wm6RhtPE5L7JlPB877vwSF6gfLAS68H+zhH+u5oa3AieqEd0D0/kC3W7qIhYbH419f7O9i/5nw==}
+  /mysql2@3.9.3:
+    resolution: {integrity: sha512-+ZaoF0llESUy7BffccHG+urErHcWPZ/WuzYAA9TEeLaDYyke3/3D+VQDzK9xzRnXpd0eMtRf0WNOeo4Q1Baung==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -5145,7 +5145,7 @@ packages:
       lru-cache: 6.0.0
 
   /seq-queue@0.0.5:
-    resolution: {integrity: sha1-1WgS4cAXpuTnw+Ojeh2m143TyT4=}
+    resolution: {integrity: sha512-hr3Wtp/GZIc/6DAGPDcV4/9WoZhjrkXsi5B/07QgX8tsdc6ilr7BFM6PM6rbdAX1kFSDYeZGLipIZZKyQP0O5Q==}
     dev: false
 
   /serialize-javascript@6.0.2:
@@ -5724,7 +5724,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typeorm@0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.2)(ts-node@10.9.2):
+  /typeorm@0.3.20(better-sqlite3@9.4.3)(mysql2@3.9.3)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -5793,7 +5793,7 @@ packages:
       dotenv: 16.3.1
       glob: 10.3.10
       mkdirp: 2.1.6
-      mysql2: 3.9.2
+      mysql2: 3.9.3
       reflect-metadata: 0.2.1
       sha.js: 2.4.11
       ts-node: 10.9.2(@types/node@20.11.30)(typescript@5.4.3)
