@@ -45,7 +45,7 @@
     "lodash": "^4.17.21",
     "mysql2": "^3.9.2",
     "nest-winston": "^1.9.4",
-    "reflect-metadata": "^0.2.1",
+    "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20",
     "webpack": "^5.90.3",
