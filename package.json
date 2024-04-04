@@ -65,7 +65,7 @@
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@types/supertest": "^6.0.2",
     "@typescript-eslint/parser": "^7.1.0",
-    "better-sqlite3": "^9.4.3",
+    "better-sqlite3": "^9.4.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
