@@ -44,7 +44,7 @@
     "fastify": "^4.26.1",
     "lodash": "^4.17.21",
     "mysql2": "^3.9.6",
-    "nest-winston": "^1.9.4",
+    "nest-winston": "^1.10.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20",
