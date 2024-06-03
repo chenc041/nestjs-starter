@@ -60,7 +60,7 @@
     "@types/cache-manager": "^4.0.6",
     "@types/jest": "29.5.12",
     "@types/lodash": "^4.17.4",
-    "@types/node": "^20.12.13",
+    "@types/node": "^20.14.0",
     "@types/superagent": "8.1.7",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@types/supertest": "^6.0.2",
