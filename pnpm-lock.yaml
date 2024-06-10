@@ -63,8 +63,8 @@ dependencies:
     specifier: ^4.17.21
     version: 4.17.21
   mysql2:
-    specifier: ^3.9.9
-    version: 3.9.9
+    specifier: ^3.10.0
+    version: 3.10.0
   nest-winston:
     specifier: ^1.10.0
     version: 1.10.0(@nestjs/common@10.3.8)(winston@3.13.0)
@@ -76,7 +76,7 @@ dependencies:
     version: 7.8.1
   typeorm:
     specifier: ^0.3.20
-    version: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.9.9)(ts-node@10.9.2)
+    version: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
   webpack:
     specifier: ^5.90.3
     version: 5.91.0
@@ -1330,7 +1330,7 @@ packages:
       '@nestjs/core': 10.3.8(@nestjs/common@10.3.8)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      typeorm: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.9.9)(ts-node@10.9.2)
+      typeorm: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -4512,8 +4512,8 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
-  /mysql2@3.9.9:
-    resolution: {integrity: sha512-Qtb2RUxwWMFkWXqF7Rd/7ySkupbQnNY7O0zQuQYgPcuJZ06M36JG3HIDEh/pEeq7LImcvA6O3lOVQ9XQK+HEZg==}
+  /mysql2@3.10.0:
+    resolution: {integrity: sha512-qx0mfWYt1DpTPkw8mAcHW/OwqqyNqBLBHvY5IjN8+icIYTjt6znrgYJ+gxqNNRpVknb5Wc/gcCM4XjbCR0j5tw==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -5765,7 +5765,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typeorm@0.3.20(better-sqlite3@10.0.0)(mysql2@3.9.9)(ts-node@10.9.2):
+  /typeorm@0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -5834,7 +5834,7 @@ packages:
       dotenv: 16.4.5
       glob: 10.3.12
       mkdirp: 2.1.6
-      mysql2: 3.9.9
+      mysql2: 3.10.0
       reflect-metadata: 0.2.2
       sha.js: 2.4.11
       ts-node: 10.9.2(@types/node@20.14.2)(typescript@5.4.5)
