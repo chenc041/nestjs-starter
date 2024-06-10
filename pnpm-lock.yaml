@@ -76,7 +76,7 @@ dependencies:
     version: 7.8.1
   typeorm:
     specifier: ^0.3.20
-    version: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
+    version: 0.3.20(better-sqlite3@11.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
   webpack:
     specifier: ^5.90.3
     version: 5.91.0
@@ -125,8 +125,8 @@ devDependencies:
     specifier: ^7.1.0
     version: 7.12.0(eslint@9.4.0)(typescript@5.4.5)
   better-sqlite3:
-    specifier: ^10.0.0
-    version: 10.0.0
+    specifier: ^11.0.0
+    version: 11.0.0
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -1326,7 +1326,7 @@ packages:
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      typeorm: 0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
+      typeorm: 0.3.20(better-sqlite3@11.0.0)(mysql2@3.10.0)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -2076,8 +2076,8 @@ packages:
     resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
     dev: false
 
-  /better-sqlite3@10.0.0:
-    resolution: {integrity: sha512-rOz0JY8bt9oMgrFssP7GnvA5R3yln73y/NizzWqy3WlFth8Ux8+g4r/N9fjX97nn4X1YX6MTER2doNpTu5pqiA==}
+  /better-sqlite3@11.0.0:
+    resolution: {integrity: sha512-1NnNhmT3EZTsKtofJlMox1jkMxdedILury74PwUbQBjWgo4tL4kf7uTAjU55mgQwjdzqakSTjkf+E1imrFwjnA==}
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -5722,7 +5722,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typeorm@0.3.20(better-sqlite3@10.0.0)(mysql2@3.10.0)(ts-node@10.9.2):
+  /typeorm@0.3.20(better-sqlite3@11.0.0)(mysql2@3.10.0)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -5782,7 +5782,7 @@ packages:
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
-      better-sqlite3: 10.0.0
+      better-sqlite3: 11.0.0
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
