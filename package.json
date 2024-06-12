@@ -48,7 +48,7 @@
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20",
-    "webpack": "^5.90.3",
+    "webpack": "^5.92.0",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
