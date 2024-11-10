@@ -38,7 +38,7 @@
     "@nestjs/typeorm": "^10.0.2",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
-    "cache-manager": "^5.7.4",
+    "cache-manager": "^6.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "fastify": "^4.26.1",
