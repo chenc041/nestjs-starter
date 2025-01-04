@@ -7,7 +7,6 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { FastifyRequest } from 'fastify';
-import { AUTH_COOKIES_KEY } from '~/constants';
 
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
@@ -38,8 +37,7 @@ export class JwtAuthGuard implements CanActivate {
   }
 
   private extractTokenFromHeader(request: FastifyRequest): string | undefined {
-    const token =
-      request.headers.authorization || request.cookies[AUTH_COOKIES_KEY];
+    const token = request.headers.authorization;
     return token ? token : undefined;
   }
 }

@@ -6,7 +6,6 @@ import { ConfigModule as LoadEnvModule } from '@nestjs/config';
 import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
 import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
 import { HttpModule } from '@nestjs/axios';
-import { CacheModule } from '@nestjs/cache-manager';
 import * as process from 'process';
 
 export const TypeOrmTestingModule = ({
@@ -21,9 +20,6 @@ export const TypeOrmTestingModule = ({
   return {
     imports: [
       HttpModule,
-      CacheModule.register({
-        isGlobal: true,
-      }),
       TypeOrmModule.forRoot({
         type: 'better-sqlite3',
         database: ':memory:',

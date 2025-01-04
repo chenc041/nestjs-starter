@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '~/app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
-import fastifyCookie from '@fastify/cookie';
 
 import {
   FastifyAdapter,
@@ -17,7 +16,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter({
       logger: process.env.NODE_ENV === 'development',
-      trustProxy: true
+      trustProxy: true,
     }),
   );
   // more info https://docs.nestjs.com/techniques/validation
@@ -28,9 +27,6 @@ async function bootstrap() {
     }),
   );
 
-  await app.register(fastifyCookie as any, {
-    secret: process.env.COOKIE_SECRET || 'cookie-secret',
-  });
   app.setGlobalPrefix('/api/v1');
 
   const config = new DocumentBuilder()

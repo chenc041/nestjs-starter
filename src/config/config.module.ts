@@ -6,21 +6,11 @@ import { ConfigModule as LoadEnvModule, ConfigService } from '@nestjs/config';
 import { join } from 'path';
 import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CacheModule } from '@nestjs/cache-manager';
 import * as process from 'process';
 
 @Global()
 @Module({
   imports: [
-    /**
-     * default cache store is in-memory cache
-     * if you want using other cache store, please read docs https://docs.nestjs.com/techniques/caching#different-stores
-     * TTL is milliseconds
-     */
-    CacheModule.register({
-      isGlobal: true,
-      ttl: 60 * 60 * 1000,
-    }),
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,
     }),

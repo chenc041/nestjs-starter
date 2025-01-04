@@ -21,10 +21,6 @@ describe('UserController', () => {
     controller = module.get<UserController>(UserController);
   });
 
-  const mockSetCookie = () => {
-    return null;
-  };
-
   const register = async (payload: {
     username: string;
     password: string;
@@ -33,7 +29,7 @@ describe('UserController', () => {
   };
 
   const login = async (payload: { username: string; password: string }) => {
-    return await controller.login(payload, { setCookie: mockSetCookie } as any);
+    return await controller.login(payload);
   };
 
   it('should be defined', () => {

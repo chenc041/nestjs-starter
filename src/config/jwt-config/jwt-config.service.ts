@@ -8,7 +8,7 @@ export class JwtConfigService {
   async signToken(user: { username: string; userId: number }) {
     const { username, userId } = user;
     const payload = { username, userId };
-    const token = await this.jwtService.signAsync(payload);
+    const token = await this.jwtService.signAsync(payload, { secret: '123' });
     return {
       token,
     };
