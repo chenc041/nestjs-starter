@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from './user.service';
+import { UserService } from 'src/user.module/customer/user.service';
 import { TypeOrmTestingModule } from '~/test.utils';
 import { UserController } from '~/user/user.controller';
 import { UserEntity } from '~/entities/user.entity';

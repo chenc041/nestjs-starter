@@ -1,11 +1,11 @@
-import { BaseEntity } from '~/entities/base.entity';
+import { CustomBaseEntity } from '~/entities/customBase.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity()
-export class UserEntity extends BaseEntity {
+export class UserEntity extends CustomBaseEntity {
   @Column({
     type: 'varchar',
-    length: 128,
+    length: 64,
     unique: true,
   })
   username: string;

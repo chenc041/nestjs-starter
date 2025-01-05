@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { JwtConfigService } from '~/config.module/jwt-config/jwt-config.service';
 import { TypeOrmTestingModule } from '~/test.utils';
 
 describe('JwtConfigService', () => {

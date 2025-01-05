@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
-import { UserService } from '~/user/user.service';
-import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { UserService } from '~/user.module/customer/user.service';
+import { JwtConfigService } from '~/config.module/jwt-config/jwt-config.service';
 import { LoginDto } from '~/dtos/login.dto';
 import {
   comparePassword,
@@ -10,13 +10,13 @@ import {
 } from '~/utils';
 import { omit } from 'lodash';
 import { GetUser } from '~/decorators/user.decorator';
-import { JwtAuthGuard } from '~/config/jwt-config/jwtAuth.guard';
+import { JwtAuthGuard } from '~/config.module/jwt-config/jwtAuth.guard';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 import { UserType } from '~/base.type';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Users')
+@ApiTags('用户管理')
 @Controller('user')
 export class UserController {
   constructor(

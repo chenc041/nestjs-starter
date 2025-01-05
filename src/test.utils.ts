@@ -3,8 +3,8 @@ import { join } from 'path';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import { WinstonModule } from 'nest-winston';
 import { ConfigModule as LoadEnvModule } from '@nestjs/config';
-import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
-import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { WinstonConfigService } from '~/config.module/winston-config/winston-config.service';
+import { JwtConfigService } from '~/config.module/jwt-config/jwt-config.service';
 import { HttpModule } from '@nestjs/axios';
 import * as process from 'process';
 
