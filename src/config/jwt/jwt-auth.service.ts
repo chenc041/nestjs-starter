@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
-export class JwtConfigService {
+export class JwtAuthService {
   constructor(private readonly jwtService: JwtService) {}
 
   async signToken(user: { username: string; userId: number }) {

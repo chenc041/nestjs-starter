@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from './user.service';
+import { UserService } from '~/modules/user/user.service';
 import { TypeOrmTestingModule } from '~/test.utils';
-import { UserController } from '~/user/user.controller';
+import { UserController } from '~/modules/user/user.controller';
 import { UserEntity } from '~/entities/user.entity';
 import { mockUser } from '~/test.mock.data';
 

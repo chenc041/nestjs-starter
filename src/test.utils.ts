@@ -1,12 +1,11 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { JwtModule, JwtService } from '@nestjs/jwt';
+import { JwtModule } from '@nestjs/jwt';
 import { WinstonModule } from 'nest-winston';
 import { ConfigModule as LoadEnvModule } from '@nestjs/config';
-import { WinstonConfigService } from '~/config/winston-config/winston-config.service';
-import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
+import { WinstonConfigService } from '~/config/winston/winston-config.service';
+import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
 import { HttpModule } from '@nestjs/axios';
-import { CacheModule } from '@nestjs/cache-manager';
 import * as process from 'process';
 
 export const TypeOrmTestingModule = ({
@@ -21,9 +20,6 @@ export const TypeOrmTestingModule = ({
   return {
     imports: [
       HttpModule,
-      CacheModule.register({
-        isGlobal: true,
-      }),
       TypeOrmModule.forRoot({
         type: 'better-sqlite3',
         database: ':memory:',
@@ -37,20 +33,13 @@ export const TypeOrmTestingModule = ({
       }),
       LoadEnvModule.forRoot({
         isGlobal: true,
-        envFilePath: [
-          join(__dirname, `../.${process.env.NODE_ENV || 'development'}.env`),
-        ],
+        envFilePath: [join(__dirname, `../.${process.env.NODE_ENV || 'development'}.env`)],
       }),
       WinstonModule.forRootAsync({
         useClass: WinstonConfigService,
       }),
     ],
     controllers: controllers,
-    providers: [
-      JwtConfigService,
-      WinstonConfigService,
-      JwtService,
-      ...providers,
-    ],
+    providers: [JwtAuthService, WinstonConfigService, ...providers],
   };
 };

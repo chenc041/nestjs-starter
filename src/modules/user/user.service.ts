@@ -24,4 +24,8 @@ export class UserService {
     }
     return await this.usersRepository.findOneBy(where);
   }
+
+  async findUserById(userId: number) {
+    return await this.usersRepository.findOneBy({ id: userId, is_deleted: 0 });
+  }
 }

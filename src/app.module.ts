@@ -1,20 +1,21 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '~/config/config.module';
-import { UserModule } from './user/user.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+import { UserModule } from '~/modules/user/user.module';
+import { SystemModule } from '~/modules/system/system.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { LoggingInterceptor } from '~/common/interceptor/logging.interceptor';
+import { LoggingService } from '~/modules/system/logging/logging.service';
 
 @Module({
-  imports: [
-    ConfigModule,
-    UserModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(
-        __dirname,
-        `../../${process.env.NODE_ENV === 'production' ? 'myapp' : 'api'}`,
-        'client',
-      ),
-    }),
+  imports: [ConfigModule, UserModule, SystemModule],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useFactory: (loggingService: LoggingService) => {
+        return new LoggingInterceptor(loggingService);
+      },
+      inject: [LoggingService],
+    },
   ],
 })
 export class AppModule {}

@@ -1,52 +1,27 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Inject,
-  Post,
-  Res,
-  UseGuards,
-  UseInterceptors,
-} from '@nestjs/common';
-import { UserService } from '~/user/user.service';
-import { JwtConfigService } from '~/config/jwt-config/jwt-config.service';
-import { LoginDto } from '~/dtos/login.dto';
-import {
-  comparePassword,
-  generatePassword,
-  HttpResponse,
-  HttpResponseType,
-} from '~/utils';
+import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
+import { UserService } from '~/modules/user/user.service';
+import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
+import { LoginDto } from '~/modules/user/dto/login.dto';
+import { comparePassword, generatePassword, HttpResponse, HttpResponseType } from '~/utils';
 import { omit } from 'lodash';
-import { GetUser } from '~/decorators/user.decorator';
-import { JwtAuthGuard } from '~/config/jwt-config/jwtAuth.guard';
-import { AUTH_COOKIES_KEY } from '~/constants';
-import { HttpService } from '@nestjs/axios';
-import { map, Observable } from 'rxjs';
-import { Cache } from 'cache-manager';
+import { GetUser } from '~/common/decorator/user.decorator';
+import { JwtAuthGuard } from '~/config/jwt/jwt-auth.guard';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
-import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
 import { UserType } from '~/base.type';
-import { FastifyReply } from 'fastify';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Users')
+@ApiTags('用户管理')
 @Controller('user')
 export class UserController {
   constructor(
-    private readonly jwt: JwtConfigService,
+    private readonly jwt: JwtAuthService,
     private readonly userService: UserService,
-    private readonly httpService: HttpService,
-    @Inject(CACHE_MANAGER) private cacheManager: Cache,
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
   ) {}
 
   @Post('login')
-  async login(
-    @Body() user: LoginDto,
-    @Res({ passthrough: true }) response: FastifyReply,
-  ): Promise<HttpResponseType<{ token: string }>> {
+  async login(@Body() user: LoginDto): Promise<HttpResponseType<{ token: string }>> {
     const userInfo = await this.userService.checkUserExist({
       username: user.username,
     });
@@ -55,9 +30,6 @@ export class UserController {
       if (match) {
         const { username, id } = userInfo;
         const { token } = await this.jwt.signToken({ username, userId: id });
-        response.setCookie(AUTH_COOKIES_KEY, token, {
-          httpOnly: true,
-        });
         return new HttpResponse({
           data: {
             token,
@@ -99,41 +71,18 @@ export class UserController {
   }
 
   @Get('logout')
-  async logout(@Res({ passthrough: true }) response: FastifyReply) {
-    response.setCookie(AUTH_COOKIES_KEY, '', {
-      expires: new Date(0),
-    });
+  async logout() {
     return new HttpResponse({
       statusCode: 10000,
     });
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Get('cache')
-  async cache() {
-    await this.cacheManager.set('test', 'chen');
-    const cacheValue = await this.cacheManager.get<string>('test');
-    return new HttpResponse({
-      data: {
-        cacheValue,
-      },
-    });
-  }
-
-  @Get('log')
+  @Get(':log')
   log() {
     this.logger.warn('this is warn level');
     this.logger.debug('this is debug level');
     this.logger.info('this is info level');
     this.logger.error('this is error level');
     return 'log';
-  }
-
-  @UseInterceptors(CacheInterceptor) // auto cache
-  @Get('http')
-  http(): Observable<Record<any, any>> {
-    return this.httpService
-      .get('https://api.github.com/users/chenc041')
-      .pipe(map((val) => val.data));
   }
 }

@@ -1,5 +1,5 @@
-import { TestingModule, Test } from '@nestjs/testing';
-import { TypeOrmConfigService } from '~/config/typeorm-config/typeorm-config.service';
+import { Test, TestingModule } from '@nestjs/testing';
+import { TypeOrmConfigService } from '~/config/typeorm/typeorm-config.service';
 import { TypeOrmTestingModule } from '~/test.utils';
 
 describe('TypeormConfig', () => {
@@ -22,6 +22,6 @@ describe('TypeormConfig', () => {
 
   it('should be return typeorm config correct', async () => {
     const config = await service.createTypeOrmOptions();
-    expect(config.database).toBe('test_app');
+    expect(config.database).toBe('study_app');
   });
 });

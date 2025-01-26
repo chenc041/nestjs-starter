@@ -1,23 +1,20 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from '~/app.module';
-import { Logger, ValidationPipe } from '@nestjs/common';
-import fastifyCookie from '@fastify/cookie';
+import { ClassSerializerInterceptor, Logger, ValidationPipe } from '@nestjs/common';
 
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import * as process from 'process';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
-const port = process.env.APP_PORT || 3001;
+const PORT = process.env.APP_PORT || 3001;
+const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({
-      logger: process.env.NODE_ENV === 'development',
-      trustProxy: true
+      logger: IS_DEV_ENV,
+      trustProxy: true,
     }),
   );
   // more info https://docs.nestjs.com/techniques/validation
@@ -28,11 +25,16 @@ async function bootstrap() {
     }),
   );
 
-  await app.register(fastifyCookie as any, {
-    secret: process.env.COOKIE_SECRET || 'cookie-secret',
-  });
+  // use interceptors
+  // more info https://docs.nestjs.com/techniques/serialization#websockets-and-microservices
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
+
+  // enable cors
+  // more info https://docs.nestjs.com/security/cors
+  app.enableCors();
   app.setGlobalPrefix('/api/v1');
 
+  // enable swagger
   const config = new DocumentBuilder()
     .setTitle('Nestjs api document')
     .setDescription('api document by Swagger')
@@ -42,9 +44,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  await app.listen(port);
+  await app.listen(PORT, '0.0.0.0');
 }
 
 bootstrap().then(() => {
-  return Logger.log(`This api server is running at: http://localhost:${port}`);
+  return Logger.log(`This api server is running at: http://localhost:${PORT}`);
 });
