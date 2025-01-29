@@ -5,11 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from '~/entities/user.entity';
 import { HttpModule } from '@nestjs/axios';
 import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
+import { UserRepository } from '~/modules/user/user.repository';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserEntity]), HttpModule],
   controllers: [UserController],
-  providers: [UserService, JwtAuthService],
+  providers: [UserService, JwtAuthService, UserRepository],
   exports: [UserService],
 })
 export class UserModule {}
