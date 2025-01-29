@@ -2,14 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LoggingEntity } from '~/entities/logging.entity';
 import { LoggingDto } from '~/modules/system/dto/logging.dto';
-import { Repository } from 'typeorm';
 import { UserService } from '~/modules/user/user.service';
+import { LoggingRepository } from '~/modules/system/logging/logging.repository';
 
 @Injectable()
 export class LoggingService {
   constructor(
     @InjectRepository(LoggingEntity)
-    protected readonly loggingRepository: Repository<LoggingEntity>,
+    protected readonly loggingRepository: LoggingRepository,
     private readonly userService: UserService,
   ) {}
 
