@@ -25,6 +25,7 @@ export class UserController {
     const userInfo = await this.userService.checkUserExist({
       username: user.username,
     });
+    console.log(userInfo, 'userName');
     if (userInfo) {
       const match = await comparePassword(user.password, userInfo.password);
       if (match) {
@@ -50,6 +51,7 @@ export class UserController {
     const exist = await this.userService.checkUserExist({
       username: user.username,
     });
+    console.log(exist, user);
     if (exist) {
       return new HttpResponse({
         statusCode: 10003,
