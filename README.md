@@ -4,7 +4,6 @@ nestjs starter
 
 <div  align='center'>
 
-[![ci workflow](https://github.com/chenc041/nestjs-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/chenc041/nestjs-starter)
 [![codecov](https://codecov.io/gh/chenc041/nestjs-starter/branch/main/graph/badge.svg?token=pYefUWcu8I)](https://codecov.io/gh/chenc041/nestjs-starter)
 
 </div>
