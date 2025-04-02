@@ -3,6 +3,15 @@
   "extends": [
     "config:recommended"
   ],
-  "autoApprove": true,
-  "automerge": true
+  "automerge": true,
+  "automergeType": "pr",
+  "requiredStatusChecks": [],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["*"],
+      "automerge": true
+    }
+  ],
+  "stabilityDays": 0,
+  "prCreation": "not-pending"
 }
