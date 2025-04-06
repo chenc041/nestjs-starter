@@ -7,6 +7,10 @@
     {
       "matchUpdateTypes": ["*"],
       "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies", "dependencies"],
+      "automerge": true
     }
   ],
   "minimumReleaseAge": null,
