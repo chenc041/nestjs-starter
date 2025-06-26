@@ -7,7 +7,7 @@
 		"email": "double_cl@163.com"
 	},
 	"private": true,
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"scripts": {
 		"prebuild": "rimraf dist",
 		"build": "nest build",
