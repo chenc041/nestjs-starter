@@ -20,7 +20,7 @@
 		"test:cov": "cross-env NODE_ENV=development jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "cross-env NODE_ENV=development jest --config ./test/jest-e2e.json",
-		"lint": "biome check biome.json --write"
+		"lint": "biome check src --write"
 	},
 	"dependencies": {
 		"@fastify/static": "^8.2.0",
