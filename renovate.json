@@ -1,18 +1,18 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "automerge": true,
-  "automergeType": "pr",
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["*"],
-      "automerge": true
-    },
-    {
-      "matchDepTypes": ["devDependencies", "dependencies"],
-      "automerge": true
-    }
-  ],
-  "minimumReleaseAge": null,
-  "prCreation": "not-pending"
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended"],
+	"automerge": true,
+	"automergeType": "pr",
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["*"],
+			"automerge": true
+		},
+		{
+			"matchDepTypes": ["devDependencies", "dependencies"],
+			"automerge": true
+		}
+	],
+	"minimumReleaseAge": null,
+	"prCreation": "not-pending"
 }

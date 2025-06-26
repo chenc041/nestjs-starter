@@ -1,18 +1,18 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test, type TestingModule } from '@nestjs/testing';
 import { DictController } from '~/modules/system/dict/dict.controller';
 
 describe('DictController', () => {
-  let controller: DictController;
+	let controller: DictController;
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [DictController],
-    }).compile();
+	beforeEach(async () => {
+		const module: TestingModule = await Test.createTestingModule({
+			controllers: [DictController],
+		}).compile();
 
-    controller = module.get<DictController>(DictController);
-  });
+		controller = module.get<DictController>(DictController);
+	});
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+	it('should be defined', () => {
+		expect(controller).toBeDefined();
+	});
 });
