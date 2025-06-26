@@ -16,13 +16,7 @@ import { WinstonConfigService } from '~/config/winston/winston-config.service';
 		}),
 		LoadEnvModule.forRoot({
 			isGlobal: true,
-			envFilePath: [
-				join(
-					__dirname,
-					'..',
-					`../.${process.env.NODE_ENV || 'development'}.env`,
-				),
-			],
+			envFilePath: [join(__dirname, '..', `../.${process.env.NODE_ENV || 'development'}.env`)],
 		}),
 		WinstonModule.forRootAsync({
 			useClass: WinstonConfigService,

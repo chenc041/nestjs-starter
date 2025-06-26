@@ -9,12 +9,7 @@ import { JwtAuthGuard } from '~/config/jwt/jwt-auth.guard';
 import type { JwtAuthService } from '~/config/jwt/jwt-auth.service';
 import type { LoginDto } from '~/modules/user/dto/login.dto';
 import type { UserService } from '~/modules/user/user.service';
-import {
-	comparePassword,
-	generatePassword,
-	HttpResponse,
-	type HttpResponseType,
-} from '~/utils';
+import { comparePassword, generatePassword, HttpResponse, type HttpResponseType } from '~/utils';
 
 @ApiTags('用户管理')
 @Controller('user')
@@ -26,9 +21,7 @@ export class UserController {
 	) {}
 
 	@Post('login')
-	async login(
-		@Body() user: LoginDto,
-	): Promise<HttpResponseType<{ token: string }>> {
+	async login(@Body() user: LoginDto): Promise<HttpResponseType<{ token: string }>> {
 		const userInfo = await this.userService.checkUserExist({
 			username: user.username,
 		});

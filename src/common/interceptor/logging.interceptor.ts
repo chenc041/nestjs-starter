@@ -1,9 +1,4 @@
-import {
-	type CallHandler,
-	type ExecutionContext,
-	Injectable,
-	type NestInterceptor,
-} from '@nestjs/common';
+import { type CallHandler, type ExecutionContext, Injectable, type NestInterceptor } from '@nestjs/common';
 import { omit } from 'lodash';
 import { type Observable, tap } from 'rxjs';
 import type { LoggingService } from '~/modules/system/logging/logging.service';
