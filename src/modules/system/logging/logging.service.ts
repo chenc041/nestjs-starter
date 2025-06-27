@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { LoggingEntity } from '~/entities/logging.entity';
-import type { LoggingDto } from '~/modules/system/dto/logging.dto';
-import type { LoggingRepository } from '~/modules/system/logging/logging.repository';
-import type { UserService } from '~/modules/user/user.service';
+import { LoggingDto } from '~/modules/system/dto/logging.dto';
+import { LoggingRepository } from '~/modules/system/logging/logging.repository';
+import { UserService } from '~/modules/user/user.service';
 
 @Injectable()
 export class LoggingService {

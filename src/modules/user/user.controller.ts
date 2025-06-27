@@ -2,14 +2,14 @@ import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { omit } from 'lodash';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
-import type { Logger } from 'winston';
-import type { UserType } from '~/base.type';
+import { Logger } from 'winston';
+import { UserType } from '~/base.type';
 import { GetUser } from '~/common/decorator/user.decorator';
 import { JwtAuthGuard } from '~/config/jwt/jwt-auth.guard';
-import type { JwtAuthService } from '~/config/jwt/jwt-auth.service';
-import type { LoginDto } from '~/modules/user/dto/login.dto';
-import type { UserService } from '~/modules/user/user.service';
-import { comparePassword, generatePassword, HttpResponse, type HttpResponseType } from '~/utils';
+import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
+import { LoginDto } from '~/modules/user/dto/login.dto';
+import { UserService } from '~/modules/user/user.service';
+import { comparePassword, generatePassword, HttpResponse, HttpResponseType } from '~/utils';
 
 @ApiTags('用户管理')
 @Controller('user')
