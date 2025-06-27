@@ -8,14 +8,15 @@ import type { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity
 import { WinstonModule } from 'nest-winston';
 import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
 import { WinstonConfigService } from '~/config/winston/winston-config.service';
+import type { Type } from '@nestjs/common';
 
 export const TypeOrmTestingModule = ({
 	controllers,
 	providers,
 	entities,
 }: {
-	controllers: unknown[];
-	providers: unknown[];
+	controllers: Type<unknown>[];
+	providers: Type<unknown>[];
 	entities: EntityClassOrSchema[];
 }) => {
 	return {
