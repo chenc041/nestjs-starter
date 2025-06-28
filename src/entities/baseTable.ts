@@ -1,7 +1,6 @@
 import { Column, CreateDateColumn, Index, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-export abstract class CustomBaseEntity {
-	@Index()
+export abstract class BaseTable {
 	@PrimaryGeneratedColumn()
 	id: number;
 
@@ -23,7 +22,8 @@ export abstract class CustomBaseEntity {
 	@Column({
 		type: 'tinyint',
 		default: 0,
+		name: 'is_deleted',
 		comment: '是否删除, 0: 未删除,1:已删除',
 	})
-	is_deleted: number;
+	isDeleted: number;
 }

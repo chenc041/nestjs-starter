@@ -1,7 +1,7 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from '~/config/jwt/jwt-auth.guard';
-import type { LoggingService } from '~/modules/system/logging/logging.service';
+import { JwtAuthGuard } from '~/setup/jwt/jwt-auth.guard';
+import { LoggingService } from '~/modules/system/logging/logging.service';
 import { HttpResponse } from '~/utils';
 
 @ApiTags('日志记录')

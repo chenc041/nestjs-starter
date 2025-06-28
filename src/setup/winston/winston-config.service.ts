@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as winston from 'winston';
 import 'winston-daily-rotate-file';
 import type { WinstonModuleOptions, WinstonModuleOptionsFactory } from 'nest-winston';
+import { ConfigService } from '@nestjs/config';
 
 const { json, timestamp, combine } = winston.format;
 
@@ -30,6 +31,7 @@ const levelFormat = {
 
 @Injectable()
 export class WinstonConfigService implements WinstonModuleOptionsFactory {
+	constructor(private readonly configService: ConfigService) {}
 	createWinstonModuleOptions(): WinstonModuleOptions {
 		const { NODE_ENV } = process.env;
 		const transports = [];
@@ -53,7 +55,7 @@ export class WinstonConfigService implements WinstonModuleOptionsFactory {
 		return {
 			transports: transports,
 			defaultMeta: {
-				appName: 'nestjs-starter',
+				appName: this.configService.get('APP_NAME') || 'nestjs-starter',
 			},
 		};
 	}

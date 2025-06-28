@@ -1,10 +1,10 @@
 import { Exclude } from 'class-transformer';
 import { Column, Entity, OneToMany } from 'typeorm';
-import { CustomBaseEntity } from '~/entities/customBase.entity';
+import { BaseTable } from '~/entities/baseTable';
 import { LoggingEntity } from '~/entities/logging.entity';
 
 @Entity()
-export class UserEntity extends CustomBaseEntity {
+export class UserEntity extends BaseTable {
 	@Column({
 		type: 'varchar',
 		length: 64,

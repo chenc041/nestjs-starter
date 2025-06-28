@@ -6,8 +6,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import type { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type';
 import { WinstonModule } from 'nest-winston';
-import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
-import { WinstonConfigService } from '~/config/winston/winston-config.service';
+import { JwtAuthService } from '~/setup/jwt/jwt-auth.service';
+import { WinstonConfigService } from '~/setup/winston/winston-config.service';
 import type { Type } from '@nestjs/common';
 
 export const TypeOrmTestingModule = ({

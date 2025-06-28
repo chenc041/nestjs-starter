@@ -40,6 +40,6 @@ export class LoggingService {
 	 * @param id
 	 */
 	async detail(id: number): Promise<LoggingEntity> {
-		return await this.loggingRepository.findOneBy({ id: id, is_deleted: 0 });
+		return await this.loggingRepository.findOneBy({ id: id, isDeleted: 0 });
 	}
 }

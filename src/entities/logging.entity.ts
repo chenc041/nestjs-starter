@@ -1,9 +1,9 @@
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
-import { CustomBaseEntity } from '~/entities/customBase.entity';
+import { BaseTable } from '~/entities/baseTable';
 import { UserEntity } from '~/entities/user.entity';
 
 @Entity()
-export class LoggingEntity extends CustomBaseEntity {
+export class LoggingEntity extends BaseTable {
 	@Column({
 		length: 64,
 		type: 'varchar',
@@ -41,7 +41,7 @@ export class LoggingEntity extends CustomBaseEntity {
 		type: 'simple-json',
 		comment: '请求参数, get 类型',
 	})
-	query: Record<string, unknown>;
+	query: object;
 
 	@Column({
 		type: 'simple-json',

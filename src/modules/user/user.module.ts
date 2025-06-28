@@ -1,7 +1,7 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { JwtAuthService } from '~/config/jwt/jwt-auth.service';
+import { JwtAuthService } from '~/setup/jwt/jwt-auth.service';
 import { UserEntity } from '~/entities/user.entity';
 import { UserController } from '~/modules/user/user.controller';
 import { UserRepository } from '~/modules/user/user.repository';

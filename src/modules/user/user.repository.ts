@@ -7,7 +7,7 @@ export class UserRepository extends Repository<UserEntity> {
 	async findByName(name: string) {
 		return await this.findOneBy({
 			username: name,
-			is_deleted: 0,
+			isDeleted: 0,
 		});
 	}
 }

@@ -23,6 +23,6 @@ export class UserService {
 	}
 
 	async findUserById(userId: number) {
-		return await this.usersRepository.findOneBy({ id: userId, is_deleted: 0 });
+		return await this.usersRepository.findOneBy({ id: userId, isDeleted: 0 });
 	}
 }
