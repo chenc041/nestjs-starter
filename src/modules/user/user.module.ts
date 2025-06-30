@@ -8,9 +8,9 @@ import { UserRepository } from '~/modules/user/user.repository';
 import { UserService } from '~/modules/user/user.service';
 
 @Module({
-	imports: [TypeOrmModule.forFeature([UserEntity]), HttpModule],
-	controllers: [UserController],
-	providers: [UserService, JwtAuthService, UserRepository],
-	exports: [UserService],
+  imports: [TypeOrmModule.forFeature([UserEntity]), HttpModule],
+  controllers: [UserController],
+  providers: [UserService, JwtAuthService, UserRepository],
+  exports: [UserService],
 })
 export class UserModule {}

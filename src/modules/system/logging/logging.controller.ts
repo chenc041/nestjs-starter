@@ -8,11 +8,11 @@ import { HttpResponse } from '~/utils';
 @UseGuards(JwtAuthGuard)
 @Controller('logging')
 export class LoggingController {
-	constructor(private logging: LoggingService) {}
+  constructor(private logging: LoggingService) {}
 
-	@Get('list')
-	async getList() {
-		const r = await this.logging.list();
-		return new HttpResponse({ statusCode: 1, data: r });
-	}
+  @Get('list')
+  async getList() {
+    const r = await this.logging.list();
+    return new HttpResponse({ statusCode: 1, data: r });
+  }
 }

@@ -7,15 +7,15 @@ import { SystemModule } from '~/modules/system/system.module';
 import { UserModule } from '~/modules/user/user.module';
 
 @Module({
-	imports: [SetupModule, UserModule, SystemModule],
-	providers: [
-		{
-			provide: APP_INTERCEPTOR,
-			useFactory: (loggingService: LoggingService) => {
-				return new LoggingInterceptor(loggingService);
-			},
-			inject: [LoggingService],
-		},
-	],
+  imports: [SetupModule, UserModule, SystemModule],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useFactory: (loggingService: LoggingService) => {
+        return new LoggingInterceptor(loggingService);
+      },
+      inject: [LoggingService],
+    },
+  ],
 })
 export class AppModule {}

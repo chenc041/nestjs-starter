@@ -11,9 +11,9 @@ import { DictController } from './dict/dict.controller';
 import { LoggingController } from './logging/logging.controller';
 
 @Module({
-	imports: [TypeOrmModule.forFeature([DictEntity, LoggingEntity]), UserModule],
-	controllers: [DictController, LoggingController],
-	providers: [LoggingService, DictService, LoggingRepository, DictRepository],
-	exports: [LoggingService, DictService],
+  imports: [TypeOrmModule.forFeature([DictEntity, LoggingEntity]), UserModule],
+  controllers: [DictController, LoggingController],
+  providers: [LoggingService, DictService, LoggingRepository, DictRepository],
+  exports: [LoggingService, DictService],
 })
 export class SystemModule {}
