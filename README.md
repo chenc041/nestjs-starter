@@ -27,19 +27,19 @@ A template to get a nestjs server up and running
 ## 🔨Development & Test
 ```bash
 # development
-$ pnpm run start
+$ bun run start
 
 # watch mode
-$ pnpm run start:dev
+$ bun run start:dev
 
 # production mode
-$ pnpm run start:prod
+$ bun run start:prod
 
 # unit tests
-$ pnpm run test
+$ bun run test
 
 # e2e tests
-$ pnpm run test:e2e
+$ bun run test:e2e
 
 # test coverage
 $ pnpm run test:cov
@@ -47,8 +47,23 @@ $ pnpm run test:cov
 
 ## ⚙ Build
 ```bash
-$ pnpm run build
+$ bun run build
 ```
+## ⚙ Database
+- generate schema
+```bash
+prisma generate
+```
+- migrate
+```bash
+prisma migrate dev # development
+```
+
+```bash
+prisma migrate deploy # production/staging
+```
+
+
 
 ## ☀️ License
 [MIT](https://github.com/chenc041/nestjs-starter/blob/main/LICENSE)

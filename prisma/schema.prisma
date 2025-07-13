@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  /// 用户名
+  username String @unique @db.VarChar(32)
+
+  /// 用户邮箱
+  password String @db.VarChar(32)
+
+  isDeleted Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Logging   Logging[]
+}
+
+model Dict {
+  id Int @id @default(autoincrement())
+
+  /// 字典名称
+  name String @db.VarChar(32)
+
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Logging {
+  id Int @id @default(autoincrement())
+
+  /// 访问的用户
+  user User? @relation(fields: [userId], references: [id])
+
+  /// 访问的用户ID
+  userId    Int?
+  ip        String   @db.Inet
+  url       String   @db.VarChar(128)
+  duration  Int
+  body      Json
+  method    Method
+  query     String
+  params    String
+  userAgent String
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, createdAt])
+}
+
+enum Method {
+  GET
+  POST
+  PUT
+  DELETE
+  PATCH
+  HEAD
+  OPTIONS
+  TRACE
+  CONNECT
+  PING
+  UNKNOWN
+}
