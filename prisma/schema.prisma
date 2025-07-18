@@ -53,9 +53,9 @@ model Logging {
   url       String   @db.VarChar(128)
   duration  Int
   body      Json
+  query     Json
+  params    Json
   method    Method
-  query     String
-  params    String
   userAgent String
   isDeleted Boolean  @default(false)
   createdAt DateTime @default(now())

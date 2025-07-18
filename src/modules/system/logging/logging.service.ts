@@ -10,7 +10,8 @@ export class LoggingService {
    * 保存日志信息
    * @param payload
    */
-  async save(payload: Logging) {
+  async save(payload: any) {
+    console.log(payload, 'payload');
     return this.prisma.logging.create({
       data: payload,
     });

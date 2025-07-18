@@ -1,11 +1,11 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
 import { omit } from 'lodash';
 import { Observable, tap } from 'rxjs';
-import { PrismaService } from '~/setup/prisma/prisma.service';
+import { LoggingService } from '~/modules/system/logging/logging.service';
 
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly loggingService: LoggingService) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     const now = Date.now();
@@ -16,18 +16,16 @@ export class LoggingInterceptor implements NestInterceptor {
         const method = request.method;
         const duration = Date.now() - now;
         const ip = request.ips.length ? request.ips[0] : request.ip;
-        this.prisma.logging.create({
-          data: {
-            ip,
-            duration,
-            url: request.url,
-            query: request.query,
-            params: request.params,
-            method: method.toUpperCase(),
-            userId: request.user?.userId,
-            body: omit(body ?? {}, 'password'),
-            userAgent: request.headers['user-agent'],
-          },
+        this.loggingService.save({
+          ip,
+          duration,
+          url: request.url,
+          query: request.query,
+          params: request.params,
+          method: method.toUpperCase(),
+          userId: request.user?.userId,
+          body: omit(body ?? {}, 'password'),
+          userAgent: request.headers['user-agent'],
         });
       }),
     );

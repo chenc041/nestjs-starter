@@ -1,11 +1,10 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from '~/setup/jwt/jwt-auth.guard';
 import { LoggingService } from '~/modules/system/logging/logging.service';
 import { HttpResponse } from '~/utils';
 
 @ApiTags('日志记录')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 @Controller('logging')
 export class LoggingController {
   constructor(private logging: LoggingService) {}
