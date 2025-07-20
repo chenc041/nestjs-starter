@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Logging } from '@/prisma';
+import { Logging, Prisma } from '@/prisma';
 import { PrismaService } from '~/setup/prisma/prisma.service';
 
 @Injectable()
@@ -10,8 +10,7 @@ export class LoggingService {
    * 保存日志信息
    * @param payload
    */
-  async save(payload: any) {
-    console.log(payload, 'payload');
+  async save(payload: Prisma.LoggingCreateInput) {
     return this.prisma.logging.create({
       data: payload,
     });
@@ -23,7 +22,7 @@ export class LoggingService {
   async list() {
     return this.prisma.logging.findMany({
       include: {
-        user: true,
+        User: true,
       },
     });
   }

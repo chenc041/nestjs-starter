@@ -23,9 +23,13 @@ export class LoggingInterceptor implements NestInterceptor {
           query: request.query,
           params: request.params,
           method: method.toUpperCase(),
-          userId: request.user?.userId,
           body: omit(body ?? {}, 'password'),
           userAgent: request.headers['user-agent'],
+          User: {
+            connect: {
+              id: request.user?.userId,
+            },
+          },
         });
       }),
     );
