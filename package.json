@@ -58,7 +58,7 @@
     "@types/superagent": "8.1.9",
     "@types/supertest": "^6.0.3",
     "better-sqlite3": "^12.2.0",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "jest": "^30.0.4",
     "lefthook": "^1.11.16",
     "rimraf": "^6.0.1",
