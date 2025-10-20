@@ -41,7 +41,7 @@
         "better-sqlite3": "^12.2.0",
         "cross-env": "^10.0.0",
         "jest": "^30.0.4",
-        "lefthook": "^1.11.16",
+        "lefthook": "^2.0.0",
         "rimraf": "^6.0.1",
         "source-map-support": "^0.5.21",
         "supertest": "^7.1.1",
@@ -958,27 +958,27 @@
 
     "kuler": ["kuler@2.0.0", "https://registry.npmmirror.com/kuler/-/kuler-2.0.0.tgz", {}, "sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A=="],
 
-    "lefthook": ["lefthook@1.11.16", "https://registry.npmmirror.com/lefthook/-/lefthook-1.11.16.tgz", { "optionalDependencies": { "lefthook-darwin-arm64": "1.11.16", "lefthook-darwin-x64": "1.11.16", "lefthook-freebsd-arm64": "1.11.16", "lefthook-freebsd-x64": "1.11.16", "lefthook-linux-arm64": "1.11.16", "lefthook-linux-x64": "1.11.16", "lefthook-openbsd-arm64": "1.11.16", "lefthook-openbsd-x64": "1.11.16", "lefthook-windows-arm64": "1.11.16", "lefthook-windows-x64": "1.11.16" }, "bin": { "lefthook": "bin/index.js" } }, "sha512-NbFZaAJUEiwBv6Npg7TZOCo9Bxh8VUSuBZ55CTulH9roQjknSXQWgGYz9FaHvqVeMBf7Xog2Wk84Ce7gWrWlYw=="],
+    "lefthook": ["lefthook@2.0.0", "", { "optionalDependencies": { "lefthook-darwin-arm64": "2.0.0", "lefthook-darwin-x64": "2.0.0", "lefthook-freebsd-arm64": "2.0.0", "lefthook-freebsd-x64": "2.0.0", "lefthook-linux-arm64": "2.0.0", "lefthook-linux-x64": "2.0.0", "lefthook-openbsd-arm64": "2.0.0", "lefthook-openbsd-x64": "2.0.0", "lefthook-windows-arm64": "2.0.0", "lefthook-windows-x64": "2.0.0" }, "bin": { "lefthook": "bin/index.js" } }, "sha512-iR7cwnlojpRW/ixaE9d8lGSp+Twv2Sbg/1rlWX8WL/J1sn9xWcII8ddeBaY+6n6bWVPYBQfxc5uhd77efGzUfA=="],
 
-    "lefthook-darwin-arm64": ["lefthook-darwin-arm64@1.11.16", "https://registry.npmmirror.com/lefthook-darwin-arm64/-/lefthook-darwin-arm64-1.11.16.tgz", { "os": "darwin", "cpu": "arm64" }, "sha512-ThsVyHPexHax7aZYpFbsswk5HPR2ap3zsJ1yE189Y97U+tLEHS+Mq98MqC1U1zFm0Ts42gpGDBx6chIRjx7Uig=="],
+    "lefthook-darwin-arm64": ["lefthook-darwin-arm64@2.0.0", "", { "os": "darwin", "cpu": "arm64" }, "sha512-0p614LKJA1XZjw1m8WA0emK5kDDHwpiVzNWQBwM/kyY9dxDOV1ixRqm36J0fpshaoSFcwucma5xA3HTK1A23Dg=="],
 
-    "lefthook-darwin-x64": ["lefthook-darwin-x64@1.11.16", "https://registry.npmmirror.com/lefthook-darwin-x64/-/lefthook-darwin-x64-1.11.16.tgz", { "os": "darwin", "cpu": "x64" }, "sha512-P3QtUJ/ICX3l+ZJqqKGyovT6Hi2N60Vt8znGglJ+OeCpVMc6H6N0ID37+jHlnyjO9AfL4EkAj70vwYe8Fzfjsw=="],
+    "lefthook-darwin-x64": ["lefthook-darwin-x64@2.0.0", "", { "os": "darwin", "cpu": "x64" }, "sha512-IcixMsdUijl/NyKHapqA/MtNrrtm/WjhezikWSzCJc1dPy+aE8PYeZoBzNFIJJgB6zavO+sUxam10Zx/70AUHw=="],
 
-    "lefthook-freebsd-arm64": ["lefthook-freebsd-arm64@1.11.16", "https://registry.npmmirror.com/lefthook-freebsd-arm64/-/lefthook-freebsd-arm64-1.11.16.tgz", { "os": "freebsd", "cpu": "arm64" }, "sha512-X0EyVoCg4+nczJDZ0rc0gpZHOrLr4Nk7knoYFKrBnvutuMCs9ixU+tA4sV8pu4KT13gigbXkxjKlIN7QUqFCxg=="],
+    "lefthook-freebsd-arm64": ["lefthook-freebsd-arm64@2.0.0", "", { "os": "freebsd", "cpu": "arm64" }, "sha512-APWEKechR2Gp5/rcf7QLkVqswShesnBZrMGmBnFh/nAtvWkkPVdBEc0VDFlU+ViUqHFepuQOSZD/G68F6NVStg=="],
 
-    "lefthook-freebsd-x64": ["lefthook-freebsd-x64@1.11.16", "https://registry.npmmirror.com/lefthook-freebsd-x64/-/lefthook-freebsd-x64-1.11.16.tgz", { "os": "freebsd", "cpu": "x64" }, "sha512-m2nfcpz2i4AdQ9fZqcoTCxAFotqXHYzUThgqcRyMaPHjlpy+ZmVnopppt9MS4GfDDq+dqjka28ZZObE7T1Nb5g=="],
+    "lefthook-freebsd-x64": ["lefthook-freebsd-x64@2.0.0", "", { "os": "freebsd", "cpu": "x64" }, "sha512-J7F/zKBgx5gJm2/EgKxqckzJRPaIHGZnKUY2h9MeKr4LBMk5kt+hwH9OeokGvGvPzLE4rEdUoFhJnmceyY4ZsA=="],
 
-    "lefthook-linux-arm64": ["lefthook-linux-arm64@1.11.16", "https://registry.npmmirror.com/lefthook-linux-arm64/-/lefthook-linux-arm64-1.11.16.tgz", { "os": "linux", "cpu": "arm64" }, "sha512-mXwCXs5J1qyq6QmBXFy2/YYG0sCzz1C0sfnzLdgXoAAmhEFfA4wy/DX/jNbvMPvRLfKHiXtf3eaqjLEYg9CGjQ=="],
+    "lefthook-linux-arm64": ["lefthook-linux-arm64@2.0.0", "", { "os": "linux", "cpu": "arm64" }, "sha512-Olilio7szMSFkfYFf7vW+JltTOpq4ZFgvqQ+nKv4NKrKH55Ax+JmK69j/VvJ/8vgks55mMQmfCuukbt2PjeG3Q=="],
 
-    "lefthook-linux-x64": ["lefthook-linux-x64@1.11.16", "https://registry.npmmirror.com/lefthook-linux-x64/-/lefthook-linux-x64-1.11.16.tgz", { "os": "linux", "cpu": "x64" }, "sha512-MW1ClFIk3uTfpOCm+FGW8NZbXWA6Xdf/eUw6//mEVs3Q4EsZ4GYZn0AFRMrsaXxbSZnvAPhtNoEVqRfYWjWKBQ=="],
+    "lefthook-linux-x64": ["lefthook-linux-x64@2.0.0", "", { "os": "linux", "cpu": "x64" }, "sha512-QOMRJ1paWjjTPPrGy8gf+8hmtXa3m63rOUeJUQo3N1xUL94NkKtqOCKz1qSmMuYW00clTGM27HdujNE+CSy5Iw=="],
 
-    "lefthook-openbsd-arm64": ["lefthook-openbsd-arm64@1.11.16", "https://registry.npmmirror.com/lefthook-openbsd-arm64/-/lefthook-openbsd-arm64-1.11.16.tgz", { "os": "openbsd", "cpu": "arm64" }, "sha512-6Aqjyc2TkkEpogsUvzLSdMAy/fN6YHlq3XA47N7VNc0Ke0XP/XIImb0zEPsYDjrdNqZbEKoXn+IYkValtS5DXg=="],
+    "lefthook-openbsd-arm64": ["lefthook-openbsd-arm64@2.0.0", "", { "os": "openbsd", "cpu": "arm64" }, "sha512-o99K0OuYgb4SfsqQQUwuxiAfgHhAnA/9eBDFVdUhGO69y7HenyXwaE52iaRiP64KH8TKMGJe+hiztmBrwOM5nA=="],
 
-    "lefthook-openbsd-x64": ["lefthook-openbsd-x64@1.11.16", "https://registry.npmmirror.com/lefthook-openbsd-x64/-/lefthook-openbsd-x64-1.11.16.tgz", { "os": "openbsd", "cpu": "x64" }, "sha512-ierlKlnrUe1ML6F3JFgFllgy71qY1S5I2wOclI3yh2EGykAJIUmdkgz/f0KT1slV2aXeSP+QgBTu496WzZSjIg=="],
+    "lefthook-openbsd-x64": ["lefthook-openbsd-x64@2.0.0", "", { "os": "openbsd", "cpu": "x64" }, "sha512-hKFieYnE1V+EWgh5eBo/5Aj+TaYOal3lJ39OO/c61MZVbD6iOaQpZVAaQWmiVUo8p1bOK+0OjeeYfEF1OJ5IAg=="],
 
-    "lefthook-windows-arm64": ["lefthook-windows-arm64@1.11.16", "https://registry.npmmirror.com/lefthook-windows-arm64/-/lefthook-windows-arm64-1.11.16.tgz", { "os": "win32", "cpu": "arm64" }, "sha512-AAjDKWOExTS1XlSvNNIa3YIJbf90SZ5X0NSA7EgHobegadLcLrkl3aX+2zcw+yvpm1AOF0WUZdYxkAHL5MNQOg=="],
+    "lefthook-windows-arm64": ["lefthook-windows-arm64@2.0.0", "", { "os": "win32", "cpu": "arm64" }, "sha512-Xzyr83kFVzjbRNzDMmlU1z5wtPXKWriPrRf3vwoVdsvHi/yvxNy9+ZH1LF0wXnH5agTgMMag/37XA+hZ/5cfmA=="],
 
-    "lefthook-windows-x64": ["lefthook-windows-x64@1.11.16", "https://registry.npmmirror.com/lefthook-windows-x64/-/lefthook-windows-x64-1.11.16.tgz", { "os": "win32", "cpu": "x64" }, "sha512-qOEAinMMV5rlf4C0VPSIlPaj5nh2CD4lzAv7+nAUydDiDQcVkkPbiwCaRkSVX509k6SctDCYQhtBnG/bwdREFQ=="],
+    "lefthook-windows-x64": ["lefthook-windows-x64@2.0.0", "", { "os": "win32", "cpu": "x64" }, "sha512-r8p2nMht/gAgZHqNdysUAyealFOyozbI1W+fU/L4thFdZzWGVesP+Vd0hvvS1MDwTxbGkqP7vCvCurll64vggg=="],
 
     "leven": ["leven@3.1.0", "https://registry.npmmirror.com/leven/-/leven-3.1.0.tgz", {}, "sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A=="],
 
