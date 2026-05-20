@@ -55,7 +55,7 @@
     "@types/jest": "30.0.0",
     "@types/lodash": "^4.17.20",
     "@types/node": "^25.0.0",
-    "@types/superagent": "8.1.9",
+    "@types/superagent": "8.1.10",
     "@types/supertest": "^7.0.0",
     "better-sqlite3": "^12.2.0",
     "cross-env": "^10.0.0",
