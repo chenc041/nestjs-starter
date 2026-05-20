@@ -42,7 +42,7 @@
     "nest-winston": "^1.10.2",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
-    "typeorm": "^0.3.25",
+    "typeorm": "^1.0.0",
     "webpack": "^5.99.9",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
